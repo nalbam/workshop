@@ -1,0 +1,57 @@
+[
+{
+	"uri": "/basics/",
+	"title": "Basics",
+	"tags": [],
+	"description": "",
+	"content": " Chapter 1 Basics 기본 환경을 구성하는 방법을 알아 봅니다.\n"
+},
+{
+	"uri": "/basics/requirements/",
+	"title": "Requirements",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/basics/installation/",
+	"title": "Installation",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/basics/configuration/",
+	"title": "Configuration",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/credits/",
+	"title": "Credits",
+	"tags": [],
+	"description": "",
+	"content": " Contributors .ghContributors { display: flex; flex-flow: wrap; align-content: flex-start }\n.ghContributors\u0026gt;div { width: 50%; display: inline-flex; margin-bottom: 5px; }\n.ghContributors\u0026gt;div label { padding-left: 4px; }\n.ghContributors\u0026gt;div span { font-size: x-small; padding-left: 4px; }   @nalbam 1 commits \n\nPackages and libraries  mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework jQuery - The Write Less, Do More, JavaScript Library lunr - Lunr enables you to provide a great search experience without the need for external, server-side, search services\u0026hellip; horsey - Progressive and customizable autocomplete component clipboard.js - copy text to clipboard highlight.js - Javascript syntax highlighter modernizr - A JavaScript toolkit that allows web developers to use new CSS3 and HTML5 features while maintaining a fine level of control over browsers that don\u0026rsquo;t support  Tooling  Netlify - Continuous deployement and hosting of this documentation Hugo  "
+},
+{
+	"uri": "/",
+	"title": "Home",
+	"tags": [],
+	"description": "",
+	"content": " Workshop Learn theme works with a page tree structure to organize content : All contents are pages, which belong to other pages. [read more about this]()\n Main features  Automatic Search [Multilingual mode]()  "
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
