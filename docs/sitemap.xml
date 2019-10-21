@@ -3,35 +3,35 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/basics/</loc>
+    <loc>/workshop/basics/</loc>
   </url>
   
   <url>
-    <loc>/basics/requirements/</loc>
+    <loc>/workshop/basics/requirements/</loc>
   </url>
   
   <url>
-    <loc>/basics/installation/</loc>
+    <loc>/workshop/basics/installation/</loc>
   </url>
   
   <url>
-    <loc>/basics/configuration/</loc>
+    <loc>/workshop/basics/configuration/</loc>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/workshop/categories/</loc>
   </url>
   
   <url>
-    <loc>/credits/</loc>
+    <loc>/workshop/credits/</loc>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/workshop/</loc>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/workshop/tags/</loc>
   </url>
   
 </urlset>

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Workshop</title>
-    <link>/</link>
+    <link>/workshop/</link>
     <description>Recent content in Home on Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/workshop/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Credits</title>
-      <link>/credits/</link>
+      <link>/workshop/credits/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/credits/</guid>
+      <guid>/workshop/credits/</guid>
       <description>Contributors .ghContributors { display: flex; flex-flow: wrap; align-content: flex-start }
 .ghContributors&amp;gt;div { width: 50%; display: inline-flex; margin-bottom: 5px; }
 .ghContributors&amp;gt;div label { padding-left: 4px; }
