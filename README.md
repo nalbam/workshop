@@ -14,7 +14,7 @@ git submodule init ; git submodule update
 npm install
 
 hugo -v
-hugo -v -d docs
+hugo -v -b /workshop/ -d docs
 ```
 
 ## start

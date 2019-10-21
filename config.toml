@@ -1,9 +1,10 @@
-baseURL = "/workshop/"
-languageCode = "ko-KR"
-defaultContentLanguage = "ko"
-
 title = "Workshop"
 theme = "learn"
+
+baseURL = "/"
+
+languageCode = "ko-KR"
+defaultContentLanguage = "ko"
 
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= false
