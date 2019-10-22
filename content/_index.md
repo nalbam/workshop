@@ -10,5 +10,4 @@ Learn theme works with a _page tree structure_ to organize content : All content
 
 ## Main features
 
-* [Automatic Search]({{%relref "basics/configuration/_index.md#activate-search" %}})
-* [Multilingual mode]({{%relref "cont/i18n/_index.md" %}})
+* [Basics]({{%relref "basics/_index.md" %}})
