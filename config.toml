@@ -27,10 +27,10 @@ weight = 2
 languageName = "Korean"
 
 [[Languages.ko.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> Repo GitHub"
+name = "<i class='fab fa-fw fa-github'></i> GitHub"
 identifier = "ds"
 url = "https://github.com/nalbam/workshop"
-weight = 10
+weight = 20
 
 [[Languages.ko.menu.shortcuts]]
 name = "<i class='fas fa-fw fa-bullhorn'></i> Credits"
