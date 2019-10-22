@@ -14,4 +14,4 @@ Learn theme works with a _page tree structure_ to organize content : All content
 * [DevOps]({{%relref "devops/_index.md" %}})
 * [Terraform]({{%relref "terraform/_index.md" %}})
 * [Kubernetes]({{%relref "kubernetes/_index.md" %}})
-* [DeepRacer]({{%relref "depracer/_index.md" %}})
+* [DeepRacer]({{%relref "deepracer/_index.md" %}})
