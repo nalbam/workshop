@@ -19,7 +19,7 @@ defaultContentLanguageInSubdir= false
   themeVariant = "blue"
 
 [outputs]
-home = [ "HTML", "RSS", "JSON"]
+home = [ "HTML" ]
 
 [Languages]
 [Languages.ko]
