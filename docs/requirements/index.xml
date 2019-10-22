@@ -10,23 +10,5 @@
 	<atom:link href="/workshop/requirements/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Installation</title>
-      <link>/workshop/requirements/installation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/workshop/requirements/installation/</guid>
-      <description> Install Command Line Tools xcode-select --install  Install Homebrew ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Install Tools brew update &amp;amp;&amp;amp; brew upgrade brew install wget telnet httpie git-lfs git-secrets jq yq  </description>
-    </item>
-    
-    <item>
-      <title>Configuration</title>
-      <link>/workshop/requirements/configuration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/workshop/requirements/configuration/</guid>
-      <description> ssh keygen ssh-keygen -q -f ~/.ssh/id_rsa -N &#39;&#39; ls -al ~/.ssh/  </description>
-    </item>
-    
   </channel>
 </rss>

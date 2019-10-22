@@ -3,7 +3,7 @@ title: Configuration
 weight: 30
 ---
 
-#### ssh keygen
+### ssh keygen
 
 ```bash
 ssh-keygen -q -f ~/.ssh/id_rsa -N ''

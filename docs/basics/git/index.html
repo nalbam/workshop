@@ -13,20 +13,20 @@
     <title>Git :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1571725603" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1571730619" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1571725603" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1571730619" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1571725603"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1571730619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1571725603"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1571725603"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1571730619"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1571730619"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1571725603"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1571730619"></script>
 
     
   </div>
@@ -115,6 +115,8 @@
         <ul>
           
           
+            
+          
           
           
         
@@ -126,9 +128,82 @@
  
   
     
-      <li data-nav-id="/workshop/requirements/installation/" title="Installation" class="dd-item ">
-        <a href="/workshop/requirements/installation/">
-        Installation
+    <li data-nav-id="/workshop/requirements/installation/" title="Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/workshop/requirements/installation/">
+          Installation
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/workshop/requirements/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/workshop/requirements/configuration/">
+          Configuration
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/workshop/requirements/aws/" title="AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/workshop/requirements/aws/">
+          AWS Account
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/workshop/requirements/aws/potal/" title="Workshop Portal" class="dd-item ">
+        <a href="/workshop/requirements/aws/potal/">
+        Workshop Portal
         
         </a>
     </li>
@@ -145,13 +220,22 @@
  
   
     
-      <li data-nav-id="/workshop/requirements/configuration/" title="Configuration" class="dd-item ">
-        <a href="/workshop/requirements/configuration/">
-        Configuration
+      <li data-nav-id="/workshop/requirements/aws/cloud9/" title="Cloud9 Workspace" class="dd-item ">
+        <a href="/workshop/requirements/aws/cloud9/">
+        Cloud9 Workspace
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -416,8 +500,6 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#config">Config</a></li>
 <li><a href="#clone">Clone</a></li>
@@ -427,7 +509,6 @@
 <li><a href="#tag">Tag</a></li>
 <li><a href="#tag-to-branch">Tag to Branch</a></li>
 <li><a href="#참고">참고</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -457,7 +538,7 @@
 
 
 
-<h4 id="introduction">Introduction</h4>
+<h3 id="introduction">Introduction</h3>
 
 <ul>
 <li>분산 버전 관리.
@@ -471,7 +552,7 @@
 <li>빠르고 안정적이며 안정적인 파일 형식.</li>
 </ul>
 
-<h4 id="config">Config</h4>
+<h3 id="config">Config</h3>
 
 <p>본인의 정보를 입력합니다. 깃 히스토리에 사용 됩니다.</p>
 
@@ -479,7 +560,7 @@
 git config --global user.email &quot;me@nalbam.com&quot;
 </code></pre>
 
-<h4 id="clone">Clone</h4>
+<h3 id="clone">Clone</h3>
 
 <p>워크스페이스 폴더를 만들고 사용자의 깃 소스를 복제 합니다.</p>
 
@@ -493,7 +574,7 @@ git clone git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
 cd &lt;reponame&gt;
 </code></pre>
 
-<h4 id="commit">Commit</h4>
+<h3 id="commit">Commit</h3>
 
 <blockquote>
 <ol>
@@ -516,7 +597,7 @@ git push origin master
 git log
 </code></pre>
 
-<h4 id="branch">Branch</h4>
+<h3 id="branch">Branch</h3>
 
 <blockquote>
 <ol>
@@ -537,7 +618,7 @@ git commit -m 'Fix some code'
 git push origin fixme
 </code></pre>
 
-<h4 id="log">Log</h4>
+<h3 id="log">Log</h3>
 
 <p>몇가지 유용한 로그 조회 방법 입니다.</p>
 
@@ -545,7 +626,7 @@ git push origin fixme
 git log --pretty=format:&quot;%h %s&quot; --graph
 </code></pre>
 
-<h4 id="tag">Tag</h4>
+<h3 id="tag">Tag</h3>
 
 <blockquote>
 <ul>
@@ -567,14 +648,14 @@ git tag
 git push origin --tags
 </code></pre>
 
-<h4 id="tag-to-branch">Tag to Branch</h4>
+<h3 id="tag-to-branch">Tag to Branch</h3>
 
 <p>특정 시점의 태그에서 브랜치를 생성 합니다. 해당 버전을 수정하기 위해 사용할 수 있습니다.</p>
 
 <pre><code class="language-bash">git checkout -b v1.0.0-hotfix v1.0.0
 </code></pre>
 
-<h4 id="참고">참고</h4>
+<h3 id="참고">참고</h3>
 
 <ul>
 <li><a href="https://git-scm.com/about/">https://git-scm.com/about/</a></li>
@@ -626,6 +707,8 @@ git push origin --tags
 
                     
                     
+                        
+                    
                     
 
                     
@@ -657,6 +740,54 @@ git push origin --tags
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -803,19 +934,19 @@ git push origin --tags
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1571725603"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1571725603"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1571725603"></script>
-    <script src="/workshop/js/jquery.sticky.js?1571725603"></script>
-    <script src="/workshop/js/featherlight.min.js?1571725603"></script>
-    <script src="/workshop/js/highlight.pack.js?1571725603"></script>
+    <script src="/workshop/js/clipboard.min.js?1571730619"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1571730619"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1571730619"></script>
+    <script src="/workshop/js/jquery.sticky.js?1571730619"></script>
+    <script src="/workshop/js/featherlight.min.js?1571730619"></script>
+    <script src="/workshop/js/highlight.pack.js?1571730619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1571725603"></script>
-    <script src="/workshop/js/learn.js?1571725603"></script>
-    <script src="/workshop/js/hugo-learn.js?1571725603"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1571730619"></script>
+    <script src="/workshop/js/learn.js?1571730619"></script>
+    <script src="/workshop/js/hugo-learn.js?1571730619"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1571725603" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1571725603"></script>
+    <link href="/workshop/mermaid/mermaid.css?1571730619" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1571730619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

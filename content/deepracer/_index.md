@@ -1,6 +1,6 @@
 ---
 title: DeepRacer
-weight: 90
+weight: 9
 chapter: true
 ---
 

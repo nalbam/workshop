@@ -1,6 +1,6 @@
 ---
 title: Basics
-weight: 5
+weight: 2
 chapter: true
 ---
 

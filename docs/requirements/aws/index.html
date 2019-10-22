@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 
-    <title>DevOps :: Workshop</title>
+    <title>AWS Account :: Workshop</title>
 
     
     <link href="/workshop/css/nucleus.css?1571730619" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/workshop/devops/">
+  <body class="" data-url="/workshop/requirements/aws/">
     <nav id="sidebar" class="">
 
 
@@ -102,7 +102,7 @@
   
     
     <li data-nav-id="/workshop/requirements/" title="Requirements" class="dd-item 
-        
+        parent
         
         
         ">
@@ -177,8 +177,8 @@
   
     
     <li data-nav-id="/workshop/requirements/aws/" title="AWS Account" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/workshop/requirements/aws/">
@@ -370,8 +370,8 @@
   
     
     <li data-nav-id="/workshop/devops/" title="DevOps" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/workshop/devops/">
@@ -450,7 +450,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/devops/_index.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/requirements/aws/_index.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -465,6 +465,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -475,7 +477,13 @@
             
           
           
-            <a href='/workshop/'>Home</a> > DevOps
+            
+            
+          
+          
+            <a href='/workshop/'>Home</a> > <a href='/workshop/requirements/'>Requirements</a> > AWS Account
+          
+         
           
          
           
@@ -484,6 +492,13 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -491,9 +506,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              AWS Account
+            </h1>
           
 
         
@@ -502,10 +520,66 @@
 
 
 	
+<div class="notices warning" ><p>실습을 진행할 계정은 새 IAM 역할을 만들고, 다른 IAM 권한을 지정할 권한이 있어야합니다.</p>
+</div>
 
-<h1 id="devops">DevOps</h1>
 
-<p>기본 환경을 구성하는 방법을 알아 봅니다.</p>
+<blockquote>
+<p>AWS 계정을 만들고 사용하는 다음과 같은 방법이 있습니다.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+<ul class="children children-li">
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+		
+			
+				
+<li>
+<a href="/workshop/requirements/aws/potal/" >Workshop Portal</a>
+</li>
+				
+
+				
+			
+			
+		
+	
+		
+			
+				
+<li>
+<a href="/workshop/requirements/aws/cloud9/" >Cloud9 Workspace</a>
+</li>
+				
+
+				
+			
+			
+		
+	
+
+	
+</ul>
+
+
+
+
 
 
 
@@ -515,8 +589,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -548,8 +620,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -566,136 +636,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -738,6 +680,22 @@
                     
 
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -746,8 +704,123 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -769,10 +842,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/workshop/kubernetes/" title="Kubernetes"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/workshop/requirements/configuration/" title="Configuration"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/workshop/deepracer/" title="DeepRacer" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/workshop/requirements/aws/potal/" title="Workshop Portal" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

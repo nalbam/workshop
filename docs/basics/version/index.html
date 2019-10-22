@@ -13,20 +13,20 @@
     <title>Semantic Versioning :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1571725603" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1571725603" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1571730619" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1571730619" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1571725603" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1571730619" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1571725603"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1571730619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1571725603"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1571725603"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1571730619"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1571730619"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1571725603"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1571730619"></script>
 
     
   </div>
@@ -115,6 +115,8 @@
         <ul>
           
           
+            
+          
           
           
         
@@ -126,9 +128,82 @@
  
   
     
-      <li data-nav-id="/workshop/requirements/installation/" title="Installation" class="dd-item ">
-        <a href="/workshop/requirements/installation/">
-        Installation
+    <li data-nav-id="/workshop/requirements/installation/" title="Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/workshop/requirements/installation/">
+          Installation
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/workshop/requirements/configuration/" title="Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/workshop/requirements/configuration/">
+          Configuration
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/workshop/requirements/aws/" title="AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/workshop/requirements/aws/">
+          AWS Account
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/workshop/requirements/aws/potal/" title="Workshop Portal" class="dd-item ">
+        <a href="/workshop/requirements/aws/potal/">
+        Workshop Portal
         
         </a>
     </li>
@@ -145,13 +220,22 @@
  
   
     
-      <li data-nav-id="/workshop/requirements/configuration/" title="Configuration" class="dd-item ">
-        <a href="/workshop/requirements/configuration/">
-        Configuration
+      <li data-nav-id="/workshop/requirements/aws/cloud9/" title="Cloud9 Workspace" class="dd-item ">
+        <a href="/workshop/requirements/aws/cloud9/">
+        Cloud9 Workspace
         
         </a>
     </li>
      
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
   
  
 
@@ -416,12 +500,9 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#summary">Summary</a></li>
-<li><a href="#examples">Examples</a></li>
+<li><a href="#요약">요약</a></li>
+<li><a href="#예시">예시</a></li>
 <li><a href="#참고">참고</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -451,7 +532,7 @@
 
 
 
-<h4 id="summary">Summary</h4>
+<h3 id="요약">요약</h3>
 
 <p>버전을 주.부.수 (MAJOR.MINOR.PATCH) 숫자로 하고:</p>
 
@@ -463,7 +544,7 @@
 
 <p>주.부.수 형식에 정식배포 전 버전이나 빌드 메타데이터를 위한 라벨을 덧붙이는 방법도 있다.</p>
 
-<h4 id="examples">Examples</h4>
+<h3 id="예시">예시</h3>
 
 <ul>
 <li>1.0.0</li>
@@ -473,7 +554,7 @@
 <li>1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt; 1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0</li>
 </ul>
 
-<h4 id="참고">참고</h4>
+<h3 id="참고">참고</h3>
 
 <ul>
 <li><a href="https://semver.org/lang/ko/">https://semver.org/lang/ko/</a></li>
@@ -524,6 +605,8 @@
 
                     
                     
+                        
+                    
                     
 
                     
@@ -555,6 +638,54 @@
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -704,19 +835,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1571725603"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1571725603"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1571725603"></script>
-    <script src="/workshop/js/jquery.sticky.js?1571725603"></script>
-    <script src="/workshop/js/featherlight.min.js?1571725603"></script>
-    <script src="/workshop/js/highlight.pack.js?1571725603"></script>
+    <script src="/workshop/js/clipboard.min.js?1571730619"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1571730619"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1571730619"></script>
+    <script src="/workshop/js/jquery.sticky.js?1571730619"></script>
+    <script src="/workshop/js/featherlight.min.js?1571730619"></script>
+    <script src="/workshop/js/highlight.pack.js?1571730619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1571725603"></script>
-    <script src="/workshop/js/learn.js?1571725603"></script>
-    <script src="/workshop/js/hugo-learn.js?1571725603"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1571730619"></script>
+    <script src="/workshop/js/learn.js?1571730619"></script>
+    <script src="/workshop/js/hugo-learn.js?1571730619"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1571725603" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1571725603"></script>
+    <link href="/workshop/mermaid/mermaid.css?1571730619" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1571730619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

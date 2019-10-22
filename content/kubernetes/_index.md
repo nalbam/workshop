@@ -1,6 +1,6 @@
 ---
 title: Kubernetes
-weight: 30
+weight: 3
 chapter: true
 ---
 

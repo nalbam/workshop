@@ -3,19 +3,19 @@ title: Installation
 weight: 20
 ---
 
-#### Install Command Line Tools
+### Install Command Line Tools
 
 ```bash
 xcode-select --install
 ```
 
-#### Install Homebrew
+### Install Homebrew
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-#### Install Tools
+### Install Tools
 
 ```bash
 brew update && brew upgrade

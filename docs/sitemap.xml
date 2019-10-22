@@ -11,23 +11,7 @@
   </url>
   
   <url>
-    <loc>/workshop/basics/git/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/installation/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/basics/version/</loc>
-  </url>
-  
-  <url>
     <loc>/workshop/terraform/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/configuration/</loc>
   </url>
   
   <url>
@@ -40,6 +24,34 @@
   
   <url>
     <loc>/workshop/deepracer/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/basics/git/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/basics/version/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/aws/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/aws/potal/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/aws/cloud9/</loc>
   </url>
   
   <url>
