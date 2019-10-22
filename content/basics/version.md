@@ -3,7 +3,7 @@ title: Semantic Versioning
 weight: 20
 ---
 
-#### 요약
+#### Summary
 
 버전을 주.부.수 (MAJOR.MINOR.PATCH) 숫자로 하고:
 
@@ -13,7 +13,7 @@ weight: 20
 
 주.부.수 형식에 정식배포 전 버전이나 빌드 메타데이터를 위한 라벨을 덧붙이는 방법도 있다.
 
-#### 예시
+#### Examples
 
 * 1.0.0
 * 1.9.0 < 1.10.0 < 1.11.0

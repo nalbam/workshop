@@ -104,7 +104,7 @@ git push origin --tags
 
 #### Tag to Branch
 
-특정 시점의 태그에서 브랜치를 생성 합니다. 해당 버전을 긴급 수정 하기위해 사용하는 방법 입니다.
+특정 시점의 태그에서 브랜치를 생성 합니다. 해당 버전을 수정하기 위해 사용할 수 있습니다.
 
 ```bash
 git checkout -b v1.0.0-hotfix v1.0.0

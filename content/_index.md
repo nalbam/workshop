@@ -10,6 +10,7 @@ Learn theme works with a _page tree structure_ to organize content : All content
 
 ## Topics
 
+* [Requirements]({{%relref "requirements/_index.md" %}})
 * [Basics]({{%relref "basics/_index.md" %}})
 * [Terraform]({{%relref "terraform/_index.md" %}})
 * [Kubernetes]({{%relref "kubernetes/_index.md" %}})
