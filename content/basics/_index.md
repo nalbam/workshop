@@ -6,4 +6,6 @@ chapter: true
 
 # Basics
 
-기본 환경을 구성하는 방법을 알아 봅니다.
+{{% notice tip %}}
+개발에 필요한 기초 내용을 알아봅니다.
+{{% /notice %}}

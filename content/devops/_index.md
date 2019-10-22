@@ -1,6 +1,6 @@
 ---
 title: DevOps
-weight: 10
+weight: 50
 chapter: true
 ---
 

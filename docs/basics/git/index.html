@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 
-    <title>Kubernetes :: Workshop</title>
+    <title>Git :: Workshop</title>
 
     
     <link href="/workshop/css/nucleus.css?1571721223" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/workshop/kubernetes/">
+  <body class="" data-url="/workshop/basics/git/">
     <nav id="sidebar" class="">
 
 
@@ -172,7 +172,7 @@
   
     
     <li data-nav-id="/workshop/basics/" title="Basics" class="dd-item 
-        
+        parent
         
         
         ">
@@ -196,7 +196,7 @@
  
   
     
-      <li data-nav-id="/workshop/basics/git/" title="Git" class="dd-item ">
+      <li data-nav-id="/workshop/basics/git/" title="Git" class="dd-item active">
         <a href="/workshop/basics/git/">
         Git
         
@@ -264,8 +264,8 @@
   
     
     <li data-nav-id="/workshop/kubernetes/" title="Kubernetes" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/workshop/kubernetes/">
@@ -370,7 +370,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/kubernetes/_index.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/basics/git.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -385,6 +385,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -395,7 +397,13 @@
             
           
           
-            <a href='/workshop/'>Home</a> > Kubernetes
+            
+            
+          
+          
+            <a href='/workshop/'>Home</a> > <a href='/workshop/basics/'>Basics</a> > Git
+          
+         
           
          
           
@@ -404,6 +412,34 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#config">Config</a></li>
+<li><a href="#clone">Clone</a></li>
+<li><a href="#commit">Commit</a></li>
+<li><a href="#branch">Branch</a></li>
+<li><a href="#log">Log</a></li>
+<li><a href="#tag">Tag</a></li>
+<li><a href="#tag-to-branch">Tag to Branch</a></li>
+<li><a href="#참고">참고</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -411,9 +447,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Git
+            </h1>
           
 
         
@@ -421,22 +460,137 @@
 
 
 
-	
 
-<h1 id="kubernetes">Kubernetes</h1>
+<h4 id="introduction">Introduction</h4>
 
-<p>기본 환경을 구성하는 방법을 알아 봅니다.</p>
+<ul>
+<li>분산 버전 관리.
 
+<ul>
+<li>중앙 서버에 대한 연결에 의존하지 않습니다.</li>
+<li>완전한 역사의 많은 사본.</li>
+</ul></li>
+<li>강력한 분기 및 병합.</li>
+<li>거의 모든 워크 플로우에 적합합니다.</li>
+<li>빠르고 안정적이며 안정적인 파일 형식.</li>
+</ul>
 
+<h4 id="config">Config</h4>
 
+<p>본인의 정보를 입력합니다. 깃 히스토리에 사용 됩니다.</p>
+
+<pre><code class="language-bash">git config --global user.name &quot;nalbam&quot;
+git config --global user.email &quot;me@nalbam.com&quot;
+</code></pre>
+
+<h4 id="clone">Clone</h4>
+
+<p>워크스페이스 폴더를 만들고 사용자의 깃 소스를 복제 합니다.</p>
+
+<pre><code class="language-bash">mkdir ~/workspace
+cd ~/workspace
+
+git clone https://github.com/&lt;username&gt;/&lt;reponame&gt;.git
+# or
+git clone git@github.com:&lt;username&gt;/&lt;reponame&gt;.git
+
+cd &lt;reponame&gt;
+</code></pre>
+
+<h4 id="commit">Commit</h4>
+
+<blockquote>
+<ol>
+<li>새 파일을 만들거나 기존 파일을 수정 합니다.</li>
+<li>변경 사항을 확인 합니다. 목록으로 보여줍니다.</li>
+<li>변경 내용을 확인 합니다.</li>
+<li>변경 파일을 추적 합니다.</li>
+<li>추적된 파일을 커밋 합니다.</li>
+<li>리모트에 푸시 합니다.</li>
+<li>깃 로그를 확인 합니다.</li>
+</ol>
+</blockquote>
+
+<pre><code class="language-bash">echo &quot;new&quot; &gt; new.file
+git status
+git diff
+git add new.file
+git commit -m 'New file'
+git push origin master
+git log
+</code></pre>
+
+<h4 id="branch">Branch</h4>
+
+<blockquote>
+<ol>
+<li>새로운 브랜치를 생성 합니다.</li>
+<li><code>some.file</code> 을 수정 합니다.</li>
+<li>변경 사항을 확인 합니다.</li>
+<li>변경 파일을 추적 합니다.</li>
+<li>추적된 파일을 커밋 합니다.</li>
+<li>리모트에 푸시 합니다.</li>
+</ol>
+</blockquote>
+
+<pre><code class="language-bash">git checkout -b fixme
+# Edit `some.file`
+git status
+git add some.file
+git commit -m 'Fix some code'
+git push origin fixme
+</code></pre>
+
+<h4 id="log">Log</h4>
+
+<p>몇가지 유용한 로그 조회 방법 입니다.</p>
+
+<pre><code class="language-bash">git log --pretty=oneline
+git log --pretty=format:&quot;%h %s&quot; --graph
+</code></pre>
+
+<h4 id="tag">Tag</h4>
+
+<blockquote>
+<ul>
+<li>Lightweight : 브렌치와 비슷한 단순한 특정 커밋의 포인터 입니다.</li>
+<li>Annotated : 깃 데이터베이스에 태깅 정보를 저장 합니다.</li>
+</ul>
+</blockquote>
+
+<pre><code class="language-bash">git checkout master
+
+# Lightweight tag
+git tag my_lightweight_tag
+
+# Annotated tag
+git tag -a v1.0.0 -m 'Version v1.0.0'
+git show v1.0.0
+
+git tag
+git push origin --tags
+</code></pre>
+
+<h4 id="tag-to-branch">Tag to Branch</h4>
+
+<p>특정 시점의 태그에서 브랜치를 생성 합니다. 해당 버전을 긴급 수정 하기위해 사용하는 방법 입니다.</p>
+
+<pre><code class="language-bash">git checkout -b v1.0.0-hotfix v1.0.0
+</code></pre>
+
+<h4 id="참고">참고</h4>
+
+<ul>
+<li><a href="https://git-scm.com/about/">https://git-scm.com/about/</a></li>
+<li><a href="https://git-scm.com/book/ko/v2">https://git-scm.com/book/ko/v2</a></li>
+</ul>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
+
         
         </div> 
         
@@ -519,18 +673,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -539,44 +681,6 @@
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -602,6 +706,57 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -639,10 +794,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/workshop/terraform/" title="Terraform"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/workshop/basics/" title="Basics"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/workshop/devops/" title="DevOps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/workshop/basics/version/" title="Semantic Versioning" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -671,3 +826,4 @@
     
   </body>
 </html>
+

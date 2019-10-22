@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Requirements on Workshop</title>
+    <link>/workshop/requirements/</link>
+    <description>Recent content in Requirements on Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+	<atom:link href="/workshop/requirements/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installation</title>
+      <link>/workshop/requirements/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/installation/</guid>
+      <description> Install Command Line Tools xcode-select --install  Install Homebrew ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Install Tools brew update &amp;amp;&amp;amp; brew upgrade brew install wget telnet httpie git-lfs git-secrets jq yq  </description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>/workshop/requirements/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/requirements/configuration/</guid>
+      <description> ssh keygen ssh-keygen -q -f ~/.ssh/id_rsa -N &#39;&#39; ls -al ~/.ssh/  </description>
+    </item>
+    
+  </channel>
+</rss>
