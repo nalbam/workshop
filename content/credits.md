@@ -3,11 +3,11 @@ title: Credits
 disableToc: true
 ---
 
-## 기여자
+## Contributors
 
 {{% ghcontributors "https://api.github.com/repos/nalbam/workshop/contributors?per_page=100" %}}
 
-## 사용된 툴
+## Tools
 
 * [Hugo](https://gohugo.io/)
 * [Hugo Themes Learn](https://themes.gohugo.io/hugo-theme-learn/)

@@ -3,11 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/workshop/introduction/</loc>
+    <loc>/workshop/basics/</loc>
   </url>
   
   <url>
-    <loc>/workshop/basics/</loc>
+    <loc>/workshop/devops/</loc>
   </url>
   
   <url>
@@ -19,7 +19,19 @@
   </url>
   
   <url>
+    <loc>/workshop/terraform/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/basics/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/deepracer/</loc>
   </url>
   
   <url>

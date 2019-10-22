@@ -1,5 +1,7 @@
 # workshop
 
+* <https://nalbam.github.io/workshop/>
+
 ## setup
 
 ```bash
@@ -13,12 +15,14 @@ git submodule init ; git submodule update
 
 npm install
 
-hugo -v
-hugo -v -b /workshop/ -d docs
+rm -rf public && hugo -v
+rm -rf docs && hugo -v -b /workshop/ -d docs
 ```
 
-## start
+## localhost
 
 ```bash
 hugo server -w -v --enableGitInfo --bind=0.0.0.0 --port 8080 --navigateToChanged
 ```
+
+* <http://localhost:8080/>
