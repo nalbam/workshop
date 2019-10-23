@@ -1,6 +1,8 @@
 pages:
   image: jekyll/jekyll
-  script: jekyll build -d public/
+  script:
+    - mkdir -p public/
+    - cp -r docs/ public/
   artifacts:
     paths:
-      - docs/
+      - public/
