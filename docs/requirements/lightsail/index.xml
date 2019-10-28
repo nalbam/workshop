@@ -90,8 +90,8 @@ Blueprint 는 OS Only 를 선택 합니다.,
       
       <guid>/workshop/requirements/lightsail/ssh_keygen/</guid>
       <description> SSH 키를 생성합니다.
- ssh-keygen -q -f ~/.ssh/id_rsa -N &#39;&#39; -C &#39;workshop&#39;   만든 퍼블릭 키를 EC2 리전에 업로드 합니다.
- aws ec2 import-key-pair --key-name &#39;workshop&#39; --public-key-material file://~/.ssh/id_rsa.pub  </description>
+ ssh-keygen -q -f ~/.ssh/id_rsa -N &amp;quot;&amp;quot; -C &amp;quot;workshop&amp;quot;   만든 퍼블릭 키를 EC2 리전에 업로드 합니다.
+ aws ec2 import-key-pair --key-name &amp;quot;workshop&amp;quot; --public-key-material file://~/.ssh/id_rsa.pub  </description>
     </item>
     
   </channel>

@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 
-    <title>Requirements :: Workshop</title>
+    <title>VPC :: Workshop</title>
 
     
     <link href="/workshop/css/nucleus.css?1572253999" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/workshop/requirements/">
+  <body class="" data-url="/workshop/terraform/vpc/">
     <nav id="sidebar" class="">
 
 
@@ -102,8 +102,8 @@
   
     
     <li data-nav-id="/workshop/requirements/" title="Requirements" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/workshop/requirements/">
@@ -578,7 +578,7 @@
   
     
     <li data-nav-id="/workshop/terraform/" title="Terraform" class="dd-item 
-        
+        parent
         
         
         ">
@@ -640,7 +640,7 @@
  
   
     
-      <li data-nav-id="/workshop/terraform/vpc/" title="VPC" class="dd-item ">
+      <li data-nav-id="/workshop/terraform/vpc/" title="VPC" class="dd-item active">
         <a href="/workshop/terraform/vpc/">
         VPC
         
@@ -766,7 +766,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/requirements/_index.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/terraform/vpc.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -793,7 +793,13 @@
             
           
           
-            <a href='/workshop/'>Home</a> > Requirements
+            
+            
+          
+          
+            <a href='/workshop/'>Home</a> > <a href='/workshop/terraform/'>Terraform</a> > VPC
+          
+         
           
          
           
@@ -820,7 +826,7 @@
           
             <h1>
               
-              Requirements
+              VPC
             </h1>
           
 
@@ -828,74 +834,62 @@
 
 
 
+<blockquote>
+<p>Public subnet 과 Private subnet 을 포함한 VPC 를 생성 합니다.</p>
+</blockquote>
 
-	
-<div class="notices tip" ><p>AWS 에 계정을 생성하고, 기본 환경을 구성하는 방법을 알아 봅니다.</p>
-</div>
+<p><img src="../../terraform/images/terraform_vpc_ach.png" alt="Success" /></p>
 
+<blockquote>
+<p>Terraform 명령으로 생성 합니다.</p>
+</blockquote>
 
+<pre><code class="language-bash">cd terraform-env-workshop/vpc
 
+terraform init
+terraform plan
+terraform apply
+</code></pre>
 
+<blockquote>
+<p>다음과 같은 메세지가 출력 되면 성공 입니다.</p>
+</blockquote>
 
+<pre><code>Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
+Outputs:
 
-
-
-<ul class="children children-li">
-	
-
-	
-		
-			
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/workshop/requirements/account/" >AWS Account</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/workshop/requirements/lightsail/" >AWS Lightsail</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
-</ul>
-
-
-
-
-
-
-
+nat_ip = [
+  &quot;52.78.138.128&quot;,
+]
+private_subnet_cidr = [
+  &quot;10.15.4.0/24&quot;,
+  &quot;10.15.5.0/24&quot;,
+  &quot;10.15.6.0/24&quot;,
+]
+private_subnet_ids = [
+  &quot;subnet-034abbc6fc10634ad&quot;,
+  &quot;subnet-0944761ec8c2f8f93&quot;,
+  &quot;subnet-06b7d51d445379626&quot;,
+]
+public_subnet_cidr = [
+  &quot;10.15.1.0/24&quot;,
+  &quot;10.15.2.0/24&quot;,
+  &quot;10.15.3.0/24&quot;,
+]
+public_subnet_ids = [
+  &quot;subnet-092938d936610cbfe&quot;,
+  &quot;subnet-026b23acc4b257e42&quot;,
+  &quot;subnet-0bfe713b44d028898&quot;,
+]
+vpc_id = vpc-0f2b2037a6dc5b059
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -928,6 +922,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -938,252 +934,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
                     
                         
             
@@ -1346,6 +1096,257 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1402,10 +1403,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/workshop/" title="Home"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/workshop/terraform/git_clone/" title="Clone"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/workshop/requirements/account/" title="AWS Account" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/workshop/terraform/eks/" title="EKS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1434,3 +1435,4 @@
     
   </body>
 </html>
+

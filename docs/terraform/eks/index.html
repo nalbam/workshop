@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 
-    <title>Requirements :: Workshop</title>
+    <title>EKS :: Workshop</title>
 
     
     <link href="/workshop/css/nucleus.css?1572253999" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/workshop/requirements/">
+  <body class="" data-url="/workshop/terraform/eks/">
     <nav id="sidebar" class="">
 
 
@@ -102,8 +102,8 @@
   
     
     <li data-nav-id="/workshop/requirements/" title="Requirements" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/workshop/requirements/">
@@ -578,7 +578,7 @@
   
     
     <li data-nav-id="/workshop/terraform/" title="Terraform" class="dd-item 
-        
+        parent
         
         
         ">
@@ -659,7 +659,7 @@
  
   
     
-      <li data-nav-id="/workshop/terraform/eks/" title="EKS" class="dd-item ">
+      <li data-nav-id="/workshop/terraform/eks/" title="EKS" class="dd-item active">
         <a href="/workshop/terraform/eks/">
         EKS
         
@@ -766,7 +766,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/requirements/_index.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/terraform/eks.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -793,7 +793,13 @@
             
           
           
-            <a href='/workshop/'>Home</a> > Requirements
+            
+            
+          
+          
+            <a href='/workshop/'>Home</a> > <a href='/workshop/terraform/'>Terraform</a> > EKS
+          
+         
           
          
           
@@ -820,7 +826,7 @@
           
             <h1>
               
-              Requirements
+              EKS
             </h1>
           
 
@@ -828,74 +834,73 @@
 
 
 
+<blockquote>
+<p>EKS cluster 를 생성하고, on-demand 와 spot instance 로 구성된 Worker node 를 생성 합니다.</p>
+</blockquote>
 
-	
-<div class="notices tip" ><p>AWS 에 계정을 생성하고, 기본 환경을 구성하는 방법을 알아 봅니다.</p>
-</div>
+<p><img src="../../terraform/images/terraform_eks_ach.png" alt="Success" /></p>
 
+<blockquote>
+<p>Terraform 명령으로 생성 합니다.</p>
+</blockquote>
 
+<pre><code class="language-bash">cd terraform-env-workshop/eks
 
+terraform init
+terraform plan
+terraform apply
+</code></pre>
 
+<blockquote>
+<p>다음과 같은 메세지가 출력 되면 성공 입니다.</p>
+</blockquote>
 
+<pre><code>Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
+Outputs:
 
+config = #
 
+# kube config
+aws eks update-kubeconfig --name workshop-eks --alias workshop-eks
 
-<ul class="children children-li">
-	
+# or
+mkdir -p ~/.kube &amp;&amp; cp .output/kube_config.yaml ~/.kube/config
 
-	
-		
-			
-		
-	
+# files
+cat .output/aws_auth.yaml
+cat .output/kube_config.yaml
 
-	
+# get
+kubectl get node -o wide
+kubectl get all --all-namespaces
 
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/workshop/requirements/account/" >AWS Account</a>
-</li>
-				
+#
 
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/workshop/requirements/lightsail/" >AWS Lightsail</a>
-</li>
-				
+endpoint = https://F4CB6XXXXXXXXX53EXXXXXXXXXX5BA2.sk1.ap-northeast-2.eks.amazonaws.com
+name = workshop-eks
+</code></pre>
 
-				
-			
-			
-		
-	
+<blockquote>
+<p>kubectl 실행을 위한 권한을 획득합니다.</p>
+</blockquote>
 
-	
-</ul>
+<pre><code class="language-bash">aws eks update-kubeconfig --name workshop-eks --alias workshop-eks
+</code></pre>
 
+<blockquote>
+<p>간단한 kubectl 명령으로 조회를 해봅니다.</p>
+</blockquote>
 
-
-
-
-
-
+<pre><code class="language-bash">kubectl get node -o wide
+kubectl get all --all-namespaces
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -928,6 +933,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -938,252 +945,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
                     
                         
             
@@ -1358,6 +1119,19 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1365,6 +1139,244 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1402,10 +1414,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/workshop/" title="Home"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/workshop/terraform/vpc/" title="VPC"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/workshop/requirements/account/" title="AWS Account" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/workshop/kubernetes/" title="Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1434,3 +1446,4 @@
     
   </body>
 </html>
+

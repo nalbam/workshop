@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/workshop/images/favicon.ico" type="image/x-icon" />
 
-    <title>Requirements :: Workshop</title>
+    <title>Clone :: Workshop</title>
 
     
     <link href="/workshop/css/nucleus.css?1572253999" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/workshop/requirements/">
+  <body class="" data-url="/workshop/terraform/git_clone/">
     <nav id="sidebar" class="">
 
 
@@ -102,8 +102,8 @@
   
     
     <li data-nav-id="/workshop/requirements/" title="Requirements" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/workshop/requirements/">
@@ -578,7 +578,7 @@
   
     
     <li data-nav-id="/workshop/terraform/" title="Terraform" class="dd-item 
-        
+        parent
         
         
         ">
@@ -621,7 +621,7 @@
  
   
     
-      <li data-nav-id="/workshop/terraform/git_clone/" title="Clone" class="dd-item ">
+      <li data-nav-id="/workshop/terraform/git_clone/" title="Clone" class="dd-item active">
         <a href="/workshop/terraform/git_clone/">
         Clone
         
@@ -766,7 +766,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/requirements/_index.md" target="blank">
+                    <a class="github-link" title='' href="https://github.com/nalbam/workshop/edit/master/content/terraform/git_clone.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text"></span>
                     </a>
@@ -793,7 +793,13 @@
             
           
           
-            <a href='/workshop/'>Home</a> > Requirements
+            
+            
+          
+          
+            <a href='/workshop/'>Home</a> > <a href='/workshop/terraform/'>Terraform</a> > Clone
+          
+         
           
          
           
@@ -820,7 +826,7 @@
           
             <h1>
               
-              Requirements
+              Clone
             </h1>
           
 
@@ -828,74 +834,31 @@
 
 
 
+<blockquote>
+<p>환경 구성에 필요한 소스를 복제 합니다.</p>
+</blockquote>
 
-	
-<div class="notices tip" ><p>AWS 에 계정을 생성하고, 기본 환경을 구성하는 방법을 알아 봅니다.</p>
-</div>
+<pre><code class="language-bash">git clone https://github.com/nalbam/terraform-env-workshop
+</code></pre>
 
+<blockquote>
+<p>다음 파일에서 <strong>terraform-workshop-seoul</strong> 을 생성한 버켓명으로 변경해줍니다.</p>
+</blockquote>
 
+<pre><code class="language-bash"># export BUCKET=&quot;terraform-nalbam-seoul&quot;
 
+cd terraform-env-workshop
 
-
-
-
-
-
-<ul class="children children-li">
-	
-
-	
-		
-			
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/workshop/requirements/account/" >AWS Account</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/workshop/requirements/lightsail/" >AWS Lightsail</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
-</ul>
-
-
-
-
-
-
-
+sed -i &quot;s/terraform-workshop-seoul/${BUCKET}/g&quot; ./vpc/main.tf
+sed -i &quot;s/terraform-workshop-seoul/${BUCKET}/g&quot; ./eks/main.tf
+sed -i &quot;s/terraform-workshop-seoul/${BUCKET}/g&quot; ./eks/variable.tf
+</code></pre>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -928,6 +891,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -938,252 +903,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
                     
                         
             
@@ -1330,6 +1049,257 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1402,10 +1372,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/workshop/" title="Home"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/workshop/terraform/backend/" title="Backend"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/workshop/requirements/account/" title="AWS Account" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/workshop/terraform/vpc/" title="VPC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1434,3 +1404,4 @@
     
   </body>
 </html>
+

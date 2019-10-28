@@ -9,4 +9,4 @@ weight: 21
 
 > Blueprint 는 `OS Only` 를 선택 합니다.,
 
-![Set user details](../../lightsail/images/add_lightsail_01.png)
+![Set lishtsail details](../../lightsail/images/add_lightsail_01.png)

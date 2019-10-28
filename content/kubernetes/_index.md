@@ -1,6 +1,8 @@
 ---
 title: Kubernetes
-weight: 3
+weight: 4
 ---
 
-기본 환경을 구성하는 방법을 알아 봅니다.
+{{% notice tip %}}
+EKS Cluster 운영에 필요한 서비스를 설치 합니다.
+{{% /notice %}}

@@ -103,6 +103,22 @@
   </url>
   
   <url>
+    <loc>/workshop/terraform/backend/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/terraform/git_clone/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/terraform/vpc/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/terraform/eks/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/categories/</loc>
   </url>
   

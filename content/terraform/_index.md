@@ -1,6 +1,10 @@
 ---
 title: Terraform
-weight: 2
+weight: 3
 ---
 
-기본 환경을 구성하는 방법을 알아 봅니다.
+{{% notice tip %}}
+Terraform 으로 AWS VPC 와 EKS Cluster 를 생성 합니다.
+{{% /notice %}}
+
+{{% children %}}
