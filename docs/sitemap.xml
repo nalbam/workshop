@@ -27,7 +27,19 @@
   </url>
   
   <url>
+    <loc>/workshop/kubernetes/tiller/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/cert-manager/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/requirements/account/add_user_01/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/nginx-ingress/</loc>
   </url>
   
   <url>
@@ -51,6 +63,10 @@
   </url>
   
   <url>
+    <loc>/workshop/kubernetes/kube-state-metrics/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/requirements/lightsail/add_lightsail_01/</loc>
   </url>
   
@@ -63,7 +79,19 @@
   </url>
   
   <url>
+    <loc>/workshop/kubernetes/metrics-server/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/requirements/lightsail/add_lightsail_03/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/kube2iam/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/cluster-autoscaler/</loc>
   </url>
   
   <url>
@@ -76,6 +104,10 @@
   
   <url>
     <loc>/workshop/requirements/lightsail/console/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/efs-provisioner/</loc>
   </url>
   
   <url>
@@ -107,7 +139,15 @@
   </url>
   
   <url>
+    <loc>/workshop/kubernetes/prometheus/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/terraform/git_clone/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/grafana/</loc>
   </url>
   
   <url>
@@ -116,6 +156,22 @@
   
   <url>
     <loc>/workshop/terraform/eks/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/jenkins/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/sonatype-nexus/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/docker-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/chartmuseum/</loc>
   </url>
   
   <url>

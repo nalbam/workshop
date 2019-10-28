@@ -10,5 +10,131 @@
 	<atom:link href="/workshop/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>helm tiller</title>
+      <link>/workshop/kubernetes/tiller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/tiller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cert-manager</title>
+      <link>/workshop/kubernetes/cert-manager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/cert-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx-ingress</title>
+      <link>/workshop/kubernetes/nginx-ingress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/nginx-ingress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kube-state-metrics</title>
+      <link>/workshop/kubernetes/kube-state-metrics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/kube-state-metrics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metrics-server</title>
+      <link>/workshop/kubernetes/metrics-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/metrics-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kube2iam</title>
+      <link>/workshop/kubernetes/kube2iam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/kube2iam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cluster-autoscaler</title>
+      <link>/workshop/kubernetes/cluster-autoscaler/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/cluster-autoscaler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>efs-provisioner</title>
+      <link>/workshop/kubernetes/efs-provisioner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/efs-provisioner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prometheus</title>
+      <link>/workshop/kubernetes/prometheus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/prometheus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grafana</title>
+      <link>/workshop/kubernetes/grafana/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/grafana/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>/workshop/kubernetes/jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sonatype-nexus</title>
+      <link>/workshop/kubernetes/sonatype-nexus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/sonatype-nexus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker-registry</title>
+      <link>/workshop/kubernetes/docker-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/docker-registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chartmuseum</title>
+      <link>/workshop/kubernetes/chartmuseum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/workshop/kubernetes/chartmuseum/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
