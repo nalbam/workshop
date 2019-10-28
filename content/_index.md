@@ -5,7 +5,7 @@ title: "Home"
 # Workshop
 
 {{% notice tip %}}
-Learn theme works with a _page tree structure_ to organize content : All contents are pages, which belong to other pages. [read more about this]({{%relref "cont/pages/_index.md"%}})
+AWS 환경에서 Terraform 으로 VPC 및 EKS cluster 를 만들고, DevOps Pipeline 을 구축해 봅니다.
 {{% /notice %}}
 
 ## Topics
