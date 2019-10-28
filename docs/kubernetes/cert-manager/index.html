@@ -13,20 +13,20 @@
     <title>cert-manager :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1572254759" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1572254759" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1572254759" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1572254759" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1572254759" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1572254759" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1572254759" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1572254759" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1572254759" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1572258423" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1572258423" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1572258423" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1572258423" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1572258423" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1572258423" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1572258423" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1572258423" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1572258423" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1572254759" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1572258423" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1572254759"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1572258423"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1572254759"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1572254759"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1572258423"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1572258423"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1572254759"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1572258423"></script>
 
     
   </div>
@@ -1110,6 +1110,61 @@
 
 
 
+<blockquote>
+<p>CustomResourceDefinition 을 생성 합니다.</p>
+</blockquote>
+
+<pre><code>kubectl apply \
+    --validate=false \
+    --filename=https://raw.githubusercontent.com/jetstack/cert-manager/release-0.11/deploy/manifests/00-crds.yaml
+</code></pre>
+
+<blockquote>
+<p>jetstack Repository 를 등록 합니다.</p>
+</blockquote>
+
+<pre><code>helm repo add jetstack https://charts.jetstack.io
+
+helm repo update
+</code></pre>
+
+<blockquote>
+<p>cert-manager 를 설치 합니다.</p>
+</blockquote>
+
+<pre><code>helm upgrade --install cert-manager jetstack/cert-manager \
+    --namespace kube-system \
+    --version v0.11.0
+</code></pre>
+
+<blockquote>
+<p>ClusterIssuer 를 설치 합니다.</p>
+</blockquote>
+
+<pre><code>cat &lt;&lt; EOF | kubectl apply -n kube-system -f -
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    # The ACME server URL
+    server: https://acme-v02.api.letsencrypt.org/directory
+    # Email address used for ACME registration
+    email: me@nalbam.com
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+    # An empty 'selector' means that this solver matches all domains
+    - selector: {}
+      http01:
+        ingress:
+          class: nginx
+EOF
+</code></pre>
 
 
 <footer class=" footline" >
@@ -1866,19 +1921,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1572254759"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1572254759"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572254759"></script>
-    <script src="/workshop/js/jquery.sticky.js?1572254759"></script>
-    <script src="/workshop/js/featherlight.min.js?1572254759"></script>
-    <script src="/workshop/js/highlight.pack.js?1572254759"></script>
+    <script src="/workshop/js/clipboard.min.js?1572258423"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1572258423"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572258423"></script>
+    <script src="/workshop/js/jquery.sticky.js?1572258423"></script>
+    <script src="/workshop/js/featherlight.min.js?1572258423"></script>
+    <script src="/workshop/js/highlight.pack.js?1572258423"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572254759"></script>
-    <script src="/workshop/js/learn.js?1572254759"></script>
-    <script src="/workshop/js/hugo-learn.js?1572254759"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572258423"></script>
+    <script src="/workshop/js/learn.js?1572258423"></script>
+    <script src="/workshop/js/hugo-learn.js?1572258423"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1572254759" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1572254759"></script>
+    <link href="/workshop/mermaid/mermaid.css?1572258423" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1572258423"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
