@@ -1,6 +1,6 @@
 ---
 title: cert-manager
-weight: 11
+weight: 13
 ---
 
 > CustomResourceDefinition 을 생성 합니다.
@@ -23,14 +23,14 @@ helm repo update
 
 ```
 helm upgrade --install cert-manager jetstack/cert-manager \
-    --namespace kube-system \
+    --namespace kube-ingress \
     --version v0.11.0
 ```
 
 > ClusterIssuer 를 설치 합니다.
 
 ```
-cat << EOF | kubectl apply -n kube-system -f -
+cat << EOF | kubectl apply -f -
 apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:

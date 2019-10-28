@@ -13,20 +13,20 @@
     <title>sonatype-nexus :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1572259585" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1572259585" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1572259585" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1572259585" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1572259585" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1572259585" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1572259585" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1572259585" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1572259585" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1572260348" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1572259585" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1572260348" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1572259585"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1572260348"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1572259585"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1572259585"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1572260348"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1572260348"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1572259585"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1572260348"></script>
 
     
   </div>
@@ -729,25 +729,6 @@
  
   
     
-      <li data-nav-id="/workshop/kubernetes/cert-manager/" title="cert-manager" class="dd-item ">
-        <a href="/workshop/kubernetes/cert-manager/">
-        cert-manager
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/workshop/kubernetes/nginx-ingress/" title="nginx-ingress" class="dd-item ">
         <a href="/workshop/kubernetes/nginx-ingress/">
         nginx-ingress
@@ -767,9 +748,9 @@
  
   
     
-      <li data-nav-id="/workshop/kubernetes/metrics-server/" title="metrics-server" class="dd-item ">
-        <a href="/workshop/kubernetes/metrics-server/">
-        metrics-server
+      <li data-nav-id="/workshop/kubernetes/cert-manager/" title="cert-manager" class="dd-item ">
+        <a href="/workshop/kubernetes/cert-manager/">
+        cert-manager
         
         </a>
     </li>
@@ -789,6 +770,25 @@
       <li data-nav-id="/workshop/kubernetes/kube2iam/" title="kube2iam" class="dd-item ">
         <a href="/workshop/kubernetes/kube2iam/">
         kube2iam
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/workshop/kubernetes/metrics-server/" title="metrics-server" class="dd-item ">
+        <a href="/workshop/kubernetes/metrics-server/">
+        metrics-server
         
         </a>
     </li>
@@ -900,25 +900,6 @@
  
   
     
-      <li data-nav-id="/workshop/kubernetes/sonatype-nexus/" title="sonatype-nexus" class="dd-item active">
-        <a href="/workshop/kubernetes/sonatype-nexus/">
-        sonatype-nexus
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/workshop/kubernetes/docker-registry/" title="docker-registry" class="dd-item ">
         <a href="/workshop/kubernetes/docker-registry/">
         docker-registry
@@ -941,6 +922,25 @@
       <li data-nav-id="/workshop/kubernetes/chartmuseum/" title="chartmuseum" class="dd-item ">
         <a href="/workshop/kubernetes/chartmuseum/">
         chartmuseum
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/workshop/kubernetes/sonatype-nexus/" title="sonatype-nexus" class="dd-item active">
+        <a href="/workshop/kubernetes/sonatype-nexus/">
+        sonatype-nexus
         
         </a>
     </li>
@@ -1091,6 +1091,73 @@
 
 
 
+<blockquote>
+<p>환경 변수를 설정 합니다.</p>
+</blockquote>
+
+<pre><code>PASSWORD=&quot;password&quot;
+
+SERVICE_TYPE=&quot;ClusterIP&quot;
+INGRESS_ENABLED=true
+INGRESS_DOMAIN=&quot;sonatype-nexus-devops.demo.nalbam.com&quot;
+</code></pre>
+
+<blockquote>
+<p>sonatype-nexus 를 <strong>statefulset</strong> 으로 설치 합니다.</p>
+</blockquote>
+
+<pre><code>cat &lt;&lt; EOF | helm upgrade --install sonatype-nexus stable/sonatype-nexus --namespace devops --values -
+statefulset:
+  enabled: true
+
+nexus:
+  service:
+    type: ${SERVICE_TYPE}
+  resources:
+    requests:
+      cpu: 1000m
+      memory: 3Gi
+    limits:
+      cpu: 2000m
+      memory: 4Gi
+  livenessProbe:
+    initialDelaySeconds: 100
+    periodSeconds: 30
+    failureThreshold: 12
+    path: /
+  readinessProbe:
+    initialDelaySeconds: 100
+    periodSeconds: 30
+    failureThreshold: 12
+    path: /
+
+nexusProxy:
+  env:
+    nexusHttpHost: ${INGRESS_DOMAIN}
+
+nexusBackup:
+  nexusAdminPassword: ${PASSWORD}
+
+ingress:
+  enabled: ${INGRESS_ENABLED}
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/force-ssl-redirect: &quot;true&quot;
+    nginx.ingress.kubernetes.io/proxy-body-size: 500m
+    ingress.kubernetes.io/proxy-body-size: 500m
+    cert-manager.io/cluster-issuer: &quot;letsencrypt-prod&quot;
+    external-dns.alpha.kubernetes.io/hostname: &quot;${INGRESS_DOMAIN}.&quot;
+  tls:
+    enabled: true
+    secretName: nexus-tls
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  storageSize: 30Gi
+  storageClass: &quot;efs&quot;
+EOF
+</code></pre>
 
 
 <footer class=" footline" >
@@ -1743,26 +1810,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1790,6 +1837,23 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1797,6 +1861,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1818,10 +1885,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/workshop/kubernetes/jenkins/" title="jenkins"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/workshop/kubernetes/chartmuseum/" title="chartmuseum"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/workshop/kubernetes/docker-registry/" title="docker-registry" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/workshop/devops/" title="DevOps" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1831,19 +1898,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1572259585"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1572259585"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572259585"></script>
-    <script src="/workshop/js/jquery.sticky.js?1572259585"></script>
-    <script src="/workshop/js/featherlight.min.js?1572259585"></script>
-    <script src="/workshop/js/highlight.pack.js?1572259585"></script>
+    <script src="/workshop/js/clipboard.min.js?1572260348"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1572260348"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572260348"></script>
+    <script src="/workshop/js/jquery.sticky.js?1572260348"></script>
+    <script src="/workshop/js/featherlight.min.js?1572260348"></script>
+    <script src="/workshop/js/highlight.pack.js?1572260348"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572259585"></script>
-    <script src="/workshop/js/learn.js?1572259585"></script>
-    <script src="/workshop/js/hugo-learn.js?1572259585"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572260348"></script>
+    <script src="/workshop/js/learn.js?1572260348"></script>
+    <script src="/workshop/js/hugo-learn.js?1572260348"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1572259585" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1572259585"></script>
+    <link href="/workshop/mermaid/mermaid.css?1572260348" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1572260348"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

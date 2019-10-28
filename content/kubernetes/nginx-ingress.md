@@ -9,7 +9,7 @@ weight: 12
 kubectl create namespace kube-ingress
 ```
 
-> nginx-ingress 를 DaemonSet 으로 설치 합니다.
+> nginx-ingress 를 **DaemonSet** 으로 설치 합니다.
 
 ```
 cat << EOF | helm upgrade --install nginx-ingress stable/nginx-ingress --namespace kube-ingress --values -
