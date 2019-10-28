@@ -43,17 +43,7 @@
       <description>Nmaespace 를 생성 합니다.
  kubectl create namespace kube-ingress   nginx-ingress 를 DaemonSet 으로 설치 합니다.
  cat &amp;lt;&amp;lt; EOF | helm upgrade --install nginx-ingress stable/nginx-ingress --namespace kube-ingress --values - controller: kind: DaemonSet config: use-forwarded-headers: &amp;quot;true&amp;quot; service: annotations: service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: &amp;quot;3600&amp;quot; EOF   잠시 후, ELB 를 확인 합니다.
- kubectl get svc -n kube-ingress -o wide | grep LoadBalancer | grep nginx-ingress-controller | awk &#39;{print $4}&#39;   ELB 주소를 Route53 에서 원하는 도메인의 CNAME 로 등록 합니다.</description>
-    </item>
-    
-    <item>
-      <title>kube-state-metrics</title>
-      <link>/workshop/kubernetes/kube-state-metrics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/workshop/kubernetes/kube-state-metrics/</guid>
-      <description> kube-state-metrics 을 설치 합니다.
- helm upgrade --install kube-state-metrics stable/kube-state-metrics --namespace kube-system  </description>
+ kubectl get svc -n kube-ingress -o wide | grep LoadBalancer | grep nginx-ingress-controller | awk &#39;{print $4}&#39;   ELB 주소를 Route53 에서 원하는 도메인의 CNAME 으로 등록 합니다.</description>
     </item>
     
     <item>
@@ -72,8 +62,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/workshop/kubernetes/kube2iam/</guid>
-      <description> kube2iam 을 설치 합니다.
- REGION=ap-northeast-2 cat &amp;lt;&amp;lt; EOF | helm upgrade --install kube2iam stable/kube2iam --namespace kube-system --values - aws: region: ${REGION} extraArgs: auto-discover-base-arn: auto-discover-default-role: true host: iptables: true interface: eni+ rbac: create: true EOF  </description>
+      <description> 환경 변수를 설정 합니다.
+ REGION=&amp;quot;ap-northeast-2&amp;quot; CLUSTER_NAME=&amp;quot;workshop-eks&amp;quot;   kube2iam 을 설치 합니다.
+ cat &amp;lt;&amp;lt; EOF | helm upgrade --install kube2iam stable/kube2iam --namespace kube-system --values - aws: region: ${REGION} extraArgs: auto-discover-base-arn: auto-discover-default-role: true host: iptables: true interface: eni+ rbac: create: true EOF  </description>
     </item>
     
     <item>
@@ -82,8 +73,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/workshop/kubernetes/cluster-autoscaler/</guid>
-      <description> cluster-autoscaler 을 설치 합니다.
- REGION=ap-northeast-2 CLUSTER_NAME=workshop-eks cat &amp;lt;&amp;lt; EOF | helm upgrade --install cluster-autoscaler stable/cluster-autoscaler --namespace kube-system --values - awsRegion: ${REGION} autoDiscovery: enabled: true clusterName: ${CLUSTER_NAME} extraArgs: v: 4 stderrthreshold: info logtostderr: true expander: random scale-down-enabled: true skip-nodes-with-local-storage: false skip-nodes-with-system-pods: false sslCertPath: /etc/ssl/certs/ca-bundle.crt rbac: create: true pspEnabled: true EOF  </description>
+      <description> 환경 변수를 설정 합니다.
+ REGION=&amp;quot;ap-northeast-2&amp;quot; CLUSTER_NAME=&amp;quot;workshop-eks&amp;quot;   cluster-autoscaler 을 설치 합니다.
+ cat &amp;lt;&amp;lt; EOF | helm upgrade --install cluster-autoscaler stable/cluster-autoscaler --namespace kube-system --values - awsRegion: ${REGION} autoDiscovery: enabled: true clusterName: ${CLUSTER_NAME} extraArgs: v: 4 stderrthreshold: info logtostderr: true expander: random scale-down-enabled: true skip-nodes-with-local-storage: false skip-nodes-with-system-pods: false sslCertPath: /etc/ssl/certs/ca-bundle.crt rbac: create: true pspEnabled: true EOF  </description>
     </item>
     
     <item>
@@ -92,8 +84,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/workshop/kubernetes/efs-provisioner/</guid>
-      <description> efs-provisioner 을 설치 합니다.
- REGION=ap-northeast-2 CLUSTER_NAME=workshop-eks EFS_ID=$(aws efs describe-file-systems --creation-token ${CLUSTER_NAME} --region ${REGION} | jq -r &#39;.FileSystems[].FileSystemId&#39;) cat &amp;lt;&amp;lt; EOF | helm upgrade --install efs-provisioner stable/efs-provisioner --namespace kube-system --values - efsProvisioner: efsFileSystemId: ${EFS_ID} awsRegion: ${REGION} path: /shared provisionerName: ${CLUSTER_NAME}/efs storageClass: name: efs isDefault: false gidAllocate: enabled: true gidMin: 40000 gidMax: 50000 reclaimPolicy: Retain EOF  </description>
+      <description> 환경 변수를 설정 합니다.
+ REGION=&amp;quot;ap-northeast-2&amp;quot; CLUSTER_NAME=&amp;quot;workshop-eks&amp;quot;   현재의 EKS cluster 용으로 미리 만들어 놓은 EFS 의 ID 를 조회 합니다.
+ EFS_ID=$(aws efs describe-file-systems --creation-token ${CLUSTER_NAME} --region ${REGION} | jq -r &#39;.FileSystems[].FileSystemId&#39;)   efs-provisioner 을 설치 합니다.
+ cat &amp;lt;&amp;lt; EOF | helm upgrade --install efs-provisioner stable/efs-provisioner --namespace kube-system --values - efsProvisioner: efsFileSystemId: ${EFS_ID} awsRegion: ${REGION} path: /shared provisionerName: ${CLUSTER_NAME}/efs storageClass: name: efs isDefault: false gidAllocate: enabled: true gidMin: 40000 gidMax: 50000 reclaimPolicy: Retain EOF  </description>
     </item>
     
     <item>
@@ -102,7 +96,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/workshop/kubernetes/prometheus/</guid>
-      <description></description>
+      <description> Nmaespace 를 생성 합니다.
+ kubectl create namespace monitor   prometheus 을 설치 합니다.
+ cat &amp;lt;&amp;lt; EOF | helm upgrade --install prometheus stable/prometheus --namespace monitor --values - server: persistentVolume: enabled: true accessModes: - ReadWriteOnce size: 8Gi storageClass: &amp;quot;efs&amp;quot; alertmanager: persistentVolume: enabled: true accessModes: - ReadWriteOnce size: 2Gi storageClass: &amp;quot;efs&amp;quot; EOF  </description>
     </item>
     
     <item>
@@ -111,7 +107,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/workshop/kubernetes/grafana/</guid>
-      <description></description>
+      <description>환경 변수를 설정 합니다.
+ PASSWORD=&amp;quot;password&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;grafana-monitor.demo.nalbam.com&amp;quot;   grafana 을 설치 합니다.
+ cat &amp;lt;&amp;lt; EOF | helm upgrade --install grafana stable/grafana --namespace monitor --values - adminUser: admin adminPassword: ${PASSWORD} service: type: ${SERVICE_TYPE} ingress: enabled: ${INGRESS_ENABLED} annotations: kubernetes.io/ingress.class: nginx nginx.ingress.kubernetes.io/force-ssl-redirect: &amp;quot;true&amp;quot; cert-manager.io/cluster-issuer: &amp;quot;letsencrypt-prod&amp;quot; external-dns.alpha.kubernetes.io/hostname: &amp;quot;${INGRESS_DOMAIN}.&amp;quot; hosts: - ${INGRESS_DOMAIN} tls: - secretName: grafana-tls hosts: - ${INGRESS_DOMAIN} env: GF_SERVER_ROOT_URL: https://${INGRESS_DOMAIN} persistence: enabled: true accessModes: - ReadWriteOnce size: 5Gi storageClassName: &amp;quot;efs&amp;quot; datasources: datasources.</description>
     </item>
     
     <item>
@@ -120,7 +118,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/workshop/kubernetes/jenkins/</guid>
-      <description></description>
+      <description>환경 변수를 설정 합니다.
+ PASSWORD=&amp;quot;password&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;jenkins-devops.demo.nalbam.com&amp;quot;   Nmaespace 를 생성 합니다.
+ kubectl create namespace devops   jenkins 을 설치 합니다.
+ cat &amp;lt;&amp;lt; EOF | helm upgrade --install jenkins stable/jenkins --namespace devops --values - master: adminUser: admin adminPassword: ${PASSWORD} resources: requests: cpu: 1000m memory: 3Gi limits: cpu: 2000m memory: 4Gi hostNetworking: true javaOpts: &amp;quot;-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Seoul&amp;quot; serviceType: ${SERVICE_TYPE} ingress: enabled: ${INGRESS_ENABLED} annotations: kubernetes.io/ingress.class: nginx nginx.ingress.kubernetes.io/force-ssl-redirect: &amp;quot;true&amp;quot; cert-manager.</description>
     </item>
     
     <item>
