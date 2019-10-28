@@ -3,12 +3,16 @@ title: cluster-autoscaler
 weight: 24
 ---
 
+> 환경 변수를 설정 합니다.
+
+```
+REGION="ap-northeast-2"
+CLUSTER_NAME="workshop-eks"
+```
+
 > cluster-autoscaler 을 설치 합니다.
 
 ```
-REGION=ap-northeast-2
-CLUSTER_NAME=workshop-eks
-
 cat << EOF | helm upgrade --install cluster-autoscaler stable/cluster-autoscaler --namespace kube-system --values -
 awsRegion: ${REGION}
 

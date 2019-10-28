@@ -29,4 +29,4 @@ EOF
 kubectl get svc -n kube-ingress -o wide | grep LoadBalancer | grep nginx-ingress-controller | awk '{print $4}'
 ```
 
-> ELB 주소를 Route53 에서 원하는 도메인의 CNAME 로 등록 합니다.
+> ELB 주소를 Route53 에서 원하는 도메인의 CNAME 으로 등록 합니다.
