@@ -40,9 +40,6 @@ ingress:
       hosts:
         - ${INGRESS_DOMAIN}
 
-env:
-  GF_SERVER_ROOT_URL: "https://${INGRESS_DOMAIN}"
-
 persistence:
   enabled: true
   accessModes:
