@@ -10,7 +10,7 @@ PASSWORD="password"
 
 SERVICE_TYPE="ClusterIP"
 INGRESS_ENABLED=true
-INGRESS_DOMAIN="grafana-monitor.demo.nalbam.com"
+INGRESS_DOMAIN="grafana-monitor.spot.mzdev.be"
 ```
 
 > grafana 을 설치 합니다.
@@ -38,7 +38,7 @@ ingress:
         - ${INGRESS_DOMAIN}
 
 env:
-  GF_SERVER_ROOT_URL: https://${INGRESS_DOMAIN}
+  GF_SERVER_ROOT_URL: "https://${INGRESS_DOMAIN}"
 
 persistence:
   enabled: true
@@ -46,37 +46,48 @@ persistence:
     - ReadWriteOnce
   size: 5Gi
   storageClassName: "efs"
-
-datasources:
-  datasources.yaml:
-    apiVersion: 1
-    datasources:
-      - name: Prometheus
-        type: prometheus
-        url: http://prometheus-server
-        access: proxy
-        isDefault: true
-
-dashboardProviders:
-  dashboardproviders.yaml:
-    apiVersion: 1
-    providers:
-      - name: "default"
-        orgId: 1
-        folder: ""
-        type: file
-        disableDeletion: false
-        editable: true
-        options:
-          path: /var/lib/grafana/dashboards/default
-
-dashboards:
-  default:
-    kube-cluster:
-      url: https://raw.githubusercontent.com/nalbam/kops-cui/master/templates/grafana/kube-cluster.json
-      datasource: Prometheus
-    kube-deployment:
-      url: https://raw.githubusercontent.com/nalbam/kops-cui/master/templates/grafana/kube-deployment.json
-      datasource: Prometheus
 EOF
 ```
+
+> 설치 내역을 확인 합니다.
+
+```
+helm list
+helm history grafana
+
+kubectl get pod,svc,ing -n monitor
+```
+
+> 그라파나 주소로 접속 합니다. 정의한 아이디와 패스워드로 로그인 합니다.
+
+![Set user details](../../kubernetes/images/grafana_01.png)
+
+> **Add data source** 를 선택 합니다.
+
+![Set user details](../../kubernetes/images/grafana_02.png)
+
+> **Prometheus** 를 선택 합니다.
+
+![Set user details](../../kubernetes/images/grafana_03.png)
+
+> HTTP URL 에 **http://prometheus-server** 를 입력 하고 하단에 **Save and Test** 버튼으로 Data source 를 추가 합니다.
+
+![Set user details](../../kubernetes/images/grafana_04.png)
+
+> 좌측의 **+** 에 마우스를 올리고, **Import** 를 선택 합니다.
+
+![Set user details](../../kubernetes/images/grafana_05.png)
+
+> Garafana.com Dashboard 에 **9797** 을 입력합니다. 자동으로 load 됩니다.
+
+![Set user details](../../kubernetes/images/grafana_06.png)
+
+> Prometheus 에 **Prometheus** 를 선택 합니다. **Import** 버튼으로 대시보드를 생성합니다.
+
+![Set user details](../../kubernetes/images/grafana_07.png)
+
+> 클러스터 조회 대시보드가 생성 되었습니다.
+
+![Set user details](../../kubernetes/images/grafana_08.png)
+
+> 같은 방법으로 **9679** 를 Import 합니다.

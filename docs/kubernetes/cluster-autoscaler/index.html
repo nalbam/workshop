@@ -13,20 +13,20 @@
     <title>cluster-autoscaler :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1572318041" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1572260348" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1572318041" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1572260348"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1572318041"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1572260348"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1572260348"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1572318041"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1572318041"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1572260348"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1572318041"></script>
 
     
   </div>
@@ -1096,7 +1096,11 @@
 </blockquote>
 
 <pre><code>REGION=&quot;ap-northeast-2&quot;
-CLUSTER_NAME=&quot;workshop-eks&quot;
+CLUSTER_NAME=&quot;$(kubectl config current-context)&quot;
+
+ACCOUNT=&quot;$(aws sts get-caller-identity | grep &quot;Account&quot; | cut -d'&quot;' -f4)&quot;
+AWS_ROLE_ARN=&quot;arn:aws:iam::${ACCOUNT}:role/${CLUSTER_NAME}-autoscaling&quot;
+echo ${AWS_ROLE_ARN}
 </code></pre>
 
 <blockquote>
@@ -1104,11 +1108,16 @@ CLUSTER_NAME=&quot;workshop-eks&quot;
 </blockquote>
 
 <pre><code>cat &lt;&lt; EOF | helm upgrade --install cluster-autoscaler stable/cluster-autoscaler --namespace kube-system --values -
+nameOverride: cluster-autoscaler
+
 awsRegion: ${REGION}
 
 autoDiscovery:
   enabled: true
   clusterName: ${CLUSTER_NAME}
+
+podAnnotations:
+  iam.amazonaws.com/role: ${AWS_ROLE_ARN}
 
 extraArgs:
   v: 4
@@ -1125,6 +1134,16 @@ rbac:
   create: true
   pspEnabled: true
 EOF
+</code></pre>
+
+<blockquote>
+<p>설치 내역을 확인 합니다.</p>
+</blockquote>
+
+<pre><code>helm list
+helm history cluster-autoscaler
+
+kubectl get pod,svc -n kube-system
 </code></pre>
 
 
@@ -1866,19 +1885,19 @@ EOF
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1572260348"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1572260348"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572260348"></script>
-    <script src="/workshop/js/jquery.sticky.js?1572260348"></script>
-    <script src="/workshop/js/featherlight.min.js?1572260348"></script>
-    <script src="/workshop/js/highlight.pack.js?1572260348"></script>
+    <script src="/workshop/js/clipboard.min.js?1572318041"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1572318041"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572318041"></script>
+    <script src="/workshop/js/jquery.sticky.js?1572318041"></script>
+    <script src="/workshop/js/featherlight.min.js?1572318041"></script>
+    <script src="/workshop/js/highlight.pack.js?1572318041"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572260348"></script>
-    <script src="/workshop/js/learn.js?1572260348"></script>
-    <script src="/workshop/js/hugo-learn.js?1572260348"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572318041"></script>
+    <script src="/workshop/js/learn.js?1572318041"></script>
+    <script src="/workshop/js/hugo-learn.js?1572318041"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1572260348" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1572260348"></script>
+    <link href="/workshop/mermaid/mermaid.css?1572318041" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1572318041"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -10,7 +10,7 @@ PASSWORD="password"
 
 SERVICE_TYPE="ClusterIP"
 INGRESS_ENABLED=true
-INGRESS_DOMAIN="jenkins-devops.demo.nalbam.com"
+INGRESS_DOMAIN="jenkins-devops.spot.mzdev.be"
 ```
 
 > Nmaespace 를 생성 합니다.

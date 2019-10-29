@@ -8,7 +8,7 @@ weight: 44
 ```
 SERVICE_TYPE="ClusterIP"
 INGRESS_ENABLED=true
-INGRESS_DOMAIN="chartmuseum-devops.demo.nalbam.com"
+INGRESS_DOMAIN="chartmuseum-devops.spot.mzdev.be"
 ```
 
 > chartmuseum 을 설치 합니다.

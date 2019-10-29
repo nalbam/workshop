@@ -8,7 +8,7 @@ weight: 43
 ```
 SERVICE_TYPE="ClusterIP"
 INGRESS_ENABLED=true
-INGRESS_DOMAIN="docker-registry-devops.demo.nalbam.com"
+INGRESS_DOMAIN="docker-registry-devops.spot.mzdev.be"
 ```
 
 > docker-registry 을 설치 합니다.

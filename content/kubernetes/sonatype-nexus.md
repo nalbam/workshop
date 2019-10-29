@@ -10,7 +10,7 @@ PASSWORD="password"
 
 SERVICE_TYPE="ClusterIP"
 INGRESS_ENABLED=true
-INGRESS_DOMAIN="sonatype-nexus-devops.demo.nalbam.com"
+INGRESS_DOMAIN="sonatype-nexus-devops.spot.mzdev.be"
 ```
 
 > sonatype-nexus 를 **statefulset** 으로 설치 합니다.

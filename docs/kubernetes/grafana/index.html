@@ -13,20 +13,20 @@
     <title>grafana :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1572260348" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1572260348" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1572318041" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1572260348" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1572318041" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1572260348"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1572318041"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1572260348"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1572260348"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1572318041"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1572318041"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1572260348"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1572318041"></script>
 
     
   </div>
@@ -1099,7 +1099,7 @@
 
 SERVICE_TYPE=&quot;ClusterIP&quot;
 INGRESS_ENABLED=true
-INGRESS_DOMAIN=&quot;grafana-monitor.demo.nalbam.com&quot;
+INGRESS_DOMAIN=&quot;grafana-monitor.spot.mzdev.be&quot;
 </code></pre>
 
 <blockquote>
@@ -1128,7 +1128,7 @@ ingress:
         - ${INGRESS_DOMAIN}
 
 env:
-  GF_SERVER_ROOT_URL: https://${INGRESS_DOMAIN}
+  GF_SERVER_ROOT_URL: &quot;https://${INGRESS_DOMAIN}&quot;
 
 persistence:
   enabled: true
@@ -1136,40 +1136,70 @@ persistence:
     - ReadWriteOnce
   size: 5Gi
   storageClassName: &quot;efs&quot;
-
-datasources:
-  datasources.yaml:
-    apiVersion: 1
-    datasources:
-      - name: Prometheus
-        type: prometheus
-        url: http://prometheus-server
-        access: proxy
-        isDefault: true
-
-dashboardProviders:
-  dashboardproviders.yaml:
-    apiVersion: 1
-    providers:
-      - name: &quot;default&quot;
-        orgId: 1
-        folder: &quot;&quot;
-        type: file
-        disableDeletion: false
-        editable: true
-        options:
-          path: /var/lib/grafana/dashboards/default
-
-dashboards:
-  default:
-    kube-cluster:
-      url: https://raw.githubusercontent.com/nalbam/kops-cui/master/templates/grafana/kube-cluster.json
-      datasource: Prometheus
-    kube-deployment:
-      url: https://raw.githubusercontent.com/nalbam/kops-cui/master/templates/grafana/kube-deployment.json
-      datasource: Prometheus
 EOF
 </code></pre>
+
+<blockquote>
+<p>설치 내역을 확인 합니다.</p>
+</blockquote>
+
+<pre><code>helm list
+helm history grafana
+
+kubectl get pod,svc,ing -n monitor
+</code></pre>
+
+<blockquote>
+<p>그라파나 주소로 접속 합니다. 정의한 아이디와 패스워드로 로그인 합니다.</p>
+</blockquote>
+
+<p><img src="../../kubernetes/images/grafana_01.png" alt="Set user details" /></p>
+
+<blockquote>
+<p><strong>Add data source</strong> 를 선택 합니다.</p>
+</blockquote>
+
+<p><img src="../../kubernetes/images/grafana_02.png" alt="Set user details" /></p>
+
+<blockquote>
+<p><strong>Prometheus</strong> 를 선택 합니다.</p>
+</blockquote>
+
+<p><img src="../../kubernetes/images/grafana_03.png" alt="Set user details" /></p>
+
+<blockquote>
+<p>HTTP URL 에 <strong><a href="http://prometheus-server">http://prometheus-server</a></strong> 를 입력 하고 하단에 <strong>Save and Test</strong> 버튼으로 Data source 를 추가 합니다.</p>
+</blockquote>
+
+<p><img src="../../kubernetes/images/grafana_04.png" alt="Set user details" /></p>
+
+<blockquote>
+<p>좌측의 <strong>+</strong> 에 마우스를 올리고, <strong>Import</strong> 를 선택 합니다.</p>
+</blockquote>
+
+<p><img src="../../kubernetes/images/grafana_05.png" alt="Set user details" /></p>
+
+<blockquote>
+<p>Garafana.com Dashboard 에 <strong>9797</strong> 을 입력합니다. 자동으로 load 됩니다.</p>
+</blockquote>
+
+<p><img src="../../kubernetes/images/grafana_06.png" alt="Set user details" /></p>
+
+<blockquote>
+<p>Prometheus 에 <strong>Prometheus</strong> 를 선택 합니다. <strong>Import</strong> 버튼으로 대시보드를 생성합니다.</p>
+</blockquote>
+
+<p><img src="../../kubernetes/images/grafana_07.png" alt="Set user details" /></p>
+
+<blockquote>
+<p>클러스터 조회 대시보드가 생성 되었습니다.</p>
+</blockquote>
+
+<p><img src="../../kubernetes/images/grafana_08.png" alt="Set user details" /></p>
+
+<blockquote>
+<p>같은 방법으로 <strong>9679</strong> 를 Import 합니다.</p>
+</blockquote>
 
 
 <footer class=" footline" >
@@ -1910,19 +1940,19 @@ EOF
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1572260348"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1572260348"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572260348"></script>
-    <script src="/workshop/js/jquery.sticky.js?1572260348"></script>
-    <script src="/workshop/js/featherlight.min.js?1572260348"></script>
-    <script src="/workshop/js/highlight.pack.js?1572260348"></script>
+    <script src="/workshop/js/clipboard.min.js?1572318041"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1572318041"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572318041"></script>
+    <script src="/workshop/js/jquery.sticky.js?1572318041"></script>
+    <script src="/workshop/js/featherlight.min.js?1572318041"></script>
+    <script src="/workshop/js/highlight.pack.js?1572318041"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572260348"></script>
-    <script src="/workshop/js/learn.js?1572260348"></script>
-    <script src="/workshop/js/hugo-learn.js?1572260348"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572318041"></script>
+    <script src="/workshop/js/learn.js?1572318041"></script>
+    <script src="/workshop/js/hugo-learn.js?1572318041"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1572260348" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1572260348"></script>
+    <link href="/workshop/mermaid/mermaid.css?1572318041" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1572318041"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

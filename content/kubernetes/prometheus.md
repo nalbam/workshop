@@ -30,3 +30,12 @@ alertmanager:
     storageClass: "efs"
 EOF
 ```
+
+> 설치 내역을 확인 합니다.
+
+```
+helm list
+helm history prometheus
+
+kubectl get pod,svc -n monitor
+```

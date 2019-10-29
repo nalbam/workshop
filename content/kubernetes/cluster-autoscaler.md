@@ -7,16 +7,19 @@ weight: 24
 
 ```
 REGION="ap-northeast-2"
-CLUSTER_NAME="workshop-eks"
+CLUSTER_NAME="$(kubectl config current-context)"
 
-ACCOUNT=$(aws sts get-caller-identity | grep "Account" | cut -d'"' -f4)
+ACCOUNT="$(aws sts get-caller-identity | grep "Account" | cut -d'"' -f4)"
 AWS_ROLE_ARN="arn:aws:iam::${ACCOUNT}:role/${CLUSTER_NAME}-autoscaling"
+echo ${AWS_ROLE_ARN}
 ```
 
 > cluster-autoscaler 을 설치 합니다.
 
 ```
 cat << EOF | helm upgrade --install cluster-autoscaler stable/cluster-autoscaler --namespace kube-system --values -
+nameOverride: cluster-autoscaler
+
 awsRegion: ${REGION}
 
 autoDiscovery:
@@ -41,4 +44,13 @@ rbac:
   create: true
   pspEnabled: true
 EOF
+```
+
+> 설치 내역을 확인 합니다.
+
+```
+helm list
+helm history cluster-autoscaler
+
+kubectl get pod,svc -n kube-system
 ```

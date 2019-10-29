@@ -23,43 +23,55 @@ controller:
 EOF
 ```
 
-> 잠시 후, ELB 를 확인 합니다.
+> 설치 내역을 확인 합니다.
 
 ```
-ELB_DOMAIN=$(kubectl get svc -n kube-ingress -o wide | grep LoadBalancer | grep nginx-ingress-controller | awk '{print $4}')
+helm list
+helm history nginx-ingress
+
+kubectl get pod,svc -n kube-ingress
+```
+
+> ELB 주소를 확인 합니다.
+
+```
+ELB_DOMAIN="$(kubectl get svc -n kube-ingress | grep LoadBalancer | grep nginx-ingress-controller | awk '{print $4}')"
 echo ${ELB_DOMAIN}
 ```
 
 > ELB 주소를 Route53 에서 원하는 도메인의 CNAME 으로 등록 합니다.
 
-> **mzdev.be** 라는 도메인이 있을때 다음과 같은 방법으로도 등록 할수 있습니다.
+> **mzdev.be** 라는 도메인이 있고, ELB 주소를 ***.spot.mzdev.be** 로 연결 하고자 할때 다음과 같은 방법으로 등록 할수 있습니다.
 
 ```
 ROOT_DOMAIN="mzdev.be"
-BASE_DOMAIN="demo.${ROOT_DOMAIN}"
+BASE_DOMAIN="*.spot.${ROOT_DOMAIN}"
 
 # HostedZoneId
-HostedZoneId=$(aws route53 list-hosted-zones | ROOT_DOMAIN=${ROOT_DOMAIN}. jq -r '.HostedZones[] | select(.Name==env.ROOT_DOMAIN) | .Id' | cut -d'/' -f3)
+ZONE_ID="$(aws route53 list-hosted-zones | ROOT_DOMAIN=${ROOT_DOMAIN}. jq -r '.HostedZones[] | select(.Name==env.ROOT_DOMAIN) | .Id' | cut -d'/' -f3)"
 echo ${HostedZoneId}
 
-# ELB domain info
-ELB_SUB=$(echo ${ELB_DOMAIN} | cut -d'-' -f1)
+# CanonicalHostedZoneNameID
+ELB_SUB_ID="$(echo ${ELB_DOMAIN} | cut -d'-' -f1)"
+echo ${ELB_SUB}
 
-CanonicalHostedZoneNameID=$(aws elb describe-load-balancers --load-balancer-name a948c3847da3011e993e406e2a4fc6f1 | jq -r '.LoadBalancerDescriptions[] | .CanonicalHostedZoneNameID')
-DNSName=$(aws elb describe-load-balancers --load-balancer-name a948c3847da3011e993e406e2a4fc6f1 | jq -r '.LoadBalancerDescriptions[] | .DNSName')
+ELB_ZONE_ID="$(aws elb describe-load-balancers --load-balancer-name ${ELB_SUB_ID} | jq -r '.LoadBalancerDescriptions[] | .CanonicalHostedZoneNameID')"
+echo ${ELB_ZONE_ID}
 ```
 
 ```
-cat << EOF | aws route53 change-resource-record-sets --hosted-zone-id ${HostedZoneId} --change-batch -
+RECORD="/tmp/route53_record.json"
+
+cat > ${RECORD} << EOF
 {
   "Changes": [
     {
       "Action": "UPSERT",
       "ResourceRecordSet": {
-        "Name": "*.${BASE_DOMAIN}",
+        "Name": "${BASE_DOMAIN}",
         "Type": "A",
         "AliasTarget": {
-          "HostedZoneId": "${HostedZoneId}",
+          "HostedZoneId": "${ELB_ZONE_ID}",
           "DNSName": "${ELB_DOMAIN}",
           "EvaluateTargetHealth": false
         }
@@ -68,4 +80,6 @@ cat << EOF | aws route53 change-resource-record-sets --hosted-zone-id ${HostedZo
   ]
 }
 EOF
+
+aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-batch file://${RECORD}
 ```

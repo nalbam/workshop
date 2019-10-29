@@ -27,9 +27,20 @@ helm upgrade --install cert-manager jetstack/cert-manager \
     --version v0.11.0
 ```
 
-> ClusterIssuer 를 설치 합니다.
+> 설치 내역을 확인 합니다.
 
 ```
+helm list
+helm history cert-manager
+
+kubectl get pod,svc -n kube-ingress
+```
+
+> ClusterIssuer 를 설치 합니다. 이때 도메인 주인의 email 을 입력 하도록 합니다.
+
+```
+EMAIL="me@nalbam.com"
+
 cat << EOF | kubectl apply -f -
 apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
@@ -40,7 +51,7 @@ spec:
     # The ACME server URL
     server: https://acme-v02.api.letsencrypt.org/directory
     # Email address used for ACME registration
-    email: me@nalbam.com
+    email: ${EMAIL}
     privateKeySecretRef:
       name: letsencrypt-prod
     # Name of a secret used to store the ACME account private key
