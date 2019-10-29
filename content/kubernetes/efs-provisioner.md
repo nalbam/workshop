@@ -5,21 +5,21 @@ weight: 25
 
 > 환경 변수를 설정 합니다.
 
-```bash
+```
 REGION="ap-northeast-2"
 CLUSTER_NAME="$(kubectl config current-context)"
 ```
 
 > 현재의 EKS cluster 용으로 미리 만들어 놓은 EFS 의 ID 를 조회 합니다.
 
-```bash
+```
 EFS_ID="$(aws efs describe-file-systems --creation-token ${CLUSTER_NAME} --region ${REGION} | jq -r '.FileSystems[].FileSystemId')"
 echo ${EFS_ID}
 ```
 
 > efs-provisioner 을 설치 합니다.
 
-```bash
+```
 cat << EOF | helm upgrade --install efs-provisioner stable/efs-provisioner --namespace kube-system --values -
 efsProvisioner:
   efsFileSystemId: ${EFS_ID}

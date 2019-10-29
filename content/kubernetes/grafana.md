@@ -5,7 +5,7 @@ weight: 32
 
 > 환경 변수를 설정 합니다.
 
-```bash
+```
 PASSWORD="password"
 
 # ROOT_DOMAIN="mzdev.be"
@@ -19,7 +19,7 @@ INGRESS_DOMAIN="grafana-monitor.${BASE_DOMAIN}"
 
 > grafana 을 설치 합니다.
 
-```bash
+```
 cat << EOF | helm upgrade --install grafana stable/grafana --namespace monitor --values -
 adminUser: admin
 adminPassword: ${PASSWORD}
@@ -55,7 +55,7 @@ EOF
 
 > 설치 내역을 확인 합니다.
 
-```bash
+```
 helm list
 helm history grafana
 

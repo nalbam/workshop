@@ -13,20 +13,20 @@
     <title>Git :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1572340181" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1572340580" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1572340181" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1572340580" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1572340181"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1572340580"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1572340181"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1572340181"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1572340580"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1572340580"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1572340181"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1572340580"></script>
 
     
   </div>
@@ -1131,7 +1131,7 @@
 <p>본인의 정보를 입력합니다. 깃 히스토리에 사용 됩니다.</p>
 </blockquote>
 
-<pre><code class="language-bash">git config --global user.name &quot;nalbam&quot;
+<pre><code>git config --global user.name &quot;nalbam&quot;
 git config --global user.email &quot;me@nalbam.com&quot;
 </code></pre>
 
@@ -1141,7 +1141,7 @@ git config --global user.email &quot;me@nalbam.com&quot;
 <p>워크스페이스 폴더를 만들고 사용자의 깃 소스를 복제 합니다.</p>
 </blockquote>
 
-<pre><code class="language-bash">mkdir ~/workspace
+<pre><code>mkdir ~/workspace
 cd ~/workspace
 
 git clone https://github.com/&lt;username&gt;/&lt;reponame&gt;.git
@@ -1165,7 +1165,7 @@ cd &lt;reponame&gt;
 </ol>
 </blockquote>
 
-<pre><code class="language-bash">echo &quot;new&quot; &gt; new.file
+<pre><code>echo &quot;new&quot; &gt; new.file
 git status
 git diff
 git add new.file
@@ -1187,7 +1187,7 @@ git log
 </ol>
 </blockquote>
 
-<pre><code class="language-bash">git checkout -b fixme
+<pre><code>git checkout -b fixme
 # Edit `some.file`
 git status
 git add some.file
@@ -1201,7 +1201,7 @@ git push origin fixme
 <p>몇가지 유용한 로그 조회 방법 입니다.</p>
 </blockquote>
 
-<pre><code class="language-bash">git log --pretty=oneline
+<pre><code>git log --pretty=oneline
 git log --pretty=format:&quot;%h %s&quot; --graph
 </code></pre>
 
@@ -1214,7 +1214,7 @@ git log --pretty=format:&quot;%h %s&quot; --graph
 </ul>
 </blockquote>
 
-<pre><code class="language-bash">git checkout master
+<pre><code>git checkout master
 
 # Lightweight tag
 git tag my_lightweight_tag
@@ -1233,7 +1233,7 @@ git push origin --tags
 <p>특정 시점의 태그에서 브랜치를 생성 합니다. 해당 버전을 수정하기 위해 사용할 수 있습니다.</p>
 </blockquote>
 
-<pre><code class="language-bash">git checkout -b v1.0.0-hotfix v1.0.0
+<pre><code>git checkout -b v1.0.0-hotfix v1.0.0
 </code></pre>
 
 <h3 id="참고">참고</h3>
@@ -1979,19 +1979,19 @@ git push origin --tags
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1572340181"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1572340181"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572340181"></script>
-    <script src="/workshop/js/jquery.sticky.js?1572340181"></script>
-    <script src="/workshop/js/featherlight.min.js?1572340181"></script>
-    <script src="/workshop/js/highlight.pack.js?1572340181"></script>
+    <script src="/workshop/js/clipboard.min.js?1572340580"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1572340580"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572340580"></script>
+    <script src="/workshop/js/jquery.sticky.js?1572340580"></script>
+    <script src="/workshop/js/featherlight.min.js?1572340580"></script>
+    <script src="/workshop/js/highlight.pack.js?1572340580"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572340181"></script>
-    <script src="/workshop/js/learn.js?1572340181"></script>
-    <script src="/workshop/js/hugo-learn.js?1572340181"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572340580"></script>
+    <script src="/workshop/js/learn.js?1572340580"></script>
+    <script src="/workshop/js/hugo-learn.js?1572340580"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1572340181" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1572340181"></script>
+    <link href="/workshop/mermaid/mermaid.css?1572340580" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1572340580"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

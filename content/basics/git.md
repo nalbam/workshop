@@ -16,7 +16,7 @@ weight: 22
 
 > 본인의 정보를 입력합니다. 깃 히스토리에 사용 됩니다.
 
-```bash
+```
 git config --global user.name "nalbam"
 git config --global user.email "me@nalbam.com"
 ```
@@ -25,7 +25,7 @@ git config --global user.email "me@nalbam.com"
 
 > 워크스페이스 폴더를 만들고 사용자의 깃 소스를 복제 합니다.
 
-```bash
+```
 mkdir ~/workspace
 cd ~/workspace
 
@@ -46,7 +46,7 @@ cd <reponame>
 > 1. 리모트에 푸시 합니다.
 > 1. 깃 로그를 확인 합니다.
 
-```bash
+```
 echo "new" > new.file
 git status
 git diff
@@ -65,7 +65,7 @@ git log
 > 1. 추적된 파일을 커밋 합니다.
 > 1. 리모트에 푸시 합니다.
 
-```bash
+```
 git checkout -b fixme
 # Edit `some.file`
 git status
@@ -78,7 +78,7 @@ git push origin fixme
 
 > 몇가지 유용한 로그 조회 방법 입니다.
 
-```bash
+```
 git log --pretty=oneline
 git log --pretty=format:"%h %s" --graph
 ```
@@ -88,7 +88,7 @@ git log --pretty=format:"%h %s" --graph
 > * Lightweight : 브렌치와 비슷한 단순한 특정 커밋의 포인터 입니다.
 > * Annotated : 깃 데이터베이스에 태깅 정보를 저장 합니다.
 
-```bash
+```
 git checkout master
 
 # Lightweight tag
@@ -106,7 +106,7 @@ git push origin --tags
 
 > 특정 시점의 태그에서 브랜치를 생성 합니다. 해당 버전을 수정하기 위해 사용할 수 있습니다.
 
-```bash
+```
 git checkout -b v1.0.0-hotfix v1.0.0
 ```
 

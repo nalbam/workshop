@@ -5,7 +5,7 @@ weight: 43
 
 > 환경 변수를 설정 합니다.
 
-```bash
+```
 # ROOT_DOMAIN="mzdev.be"
 # BASE_DOMAIN="spot.${ROOT_DOMAIN}"
 
@@ -16,7 +16,7 @@ INGRESS_DOMAIN="docker-registry-devops.${BASE_DOMAIN}"
 
 > docker-registry 을 설치 합니다.
 
-```bash
+```
 cat << EOF | helm upgrade --install docker-registry stable/docker-registry --namespace devops --values -
 service:
   type: ${SERVICE_TYPE}

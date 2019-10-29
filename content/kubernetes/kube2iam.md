@@ -5,13 +5,13 @@ weight: 21
 
 > 환경 변수를 설정 합니다.
 
-```bash
+```
 REGION="ap-northeast-2"
 ```
 
 > kube2iam 을 설치 합니다.
 
-```bash
+```
 cat << EOF | helm upgrade --install kube2iam stable/kube2iam --namespace kube-system --values -
 aws:
   region: ${REGION}

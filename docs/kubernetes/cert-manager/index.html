@@ -13,20 +13,20 @@
     <title>cert-manager :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1572340181" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1572340181" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1572340580" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1572340580" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1572340181" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1572340580" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1572340181"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1572340580"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1572340181"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1572340181"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1572340580"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1572340580"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1572340181"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1572340580"></script>
 
     
   </div>
@@ -1095,7 +1095,7 @@
 <p>CustomResourceDefinition 을 생성 합니다.</p>
 </blockquote>
 
-<pre><code class="language-bash">kubectl apply \
+<pre><code>kubectl apply \
     --validate=false \
     --filename=https://raw.githubusercontent.com/jetstack/cert-manager/release-0.11/deploy/manifests/00-crds.yaml
 </code></pre>
@@ -1104,7 +1104,7 @@
 <p>jetstack Repository 를 등록 합니다.</p>
 </blockquote>
 
-<pre><code class="language-bash">helm repo add jetstack https://charts.jetstack.io
+<pre><code>helm repo add jetstack https://charts.jetstack.io
 
 helm repo update
 </code></pre>
@@ -1113,7 +1113,7 @@ helm repo update
 <p>cert-manager 를 설치 합니다.</p>
 </blockquote>
 
-<pre><code class="language-bash">helm upgrade --install cert-manager jetstack/cert-manager \
+<pre><code>helm upgrade --install cert-manager jetstack/cert-manager \
     --namespace kube-ingress \
     --version v0.11.0
 </code></pre>
@@ -1122,7 +1122,7 @@ helm repo update
 <p>설치 내역을 확인 합니다.</p>
 </blockquote>
 
-<pre><code class="language-bash">helm list
+<pre><code>helm list
 helm history cert-manager
 
 kubectl get pod,svc -n kube-ingress
@@ -1132,7 +1132,7 @@ kubectl get pod,svc -n kube-ingress
 <p>ClusterIssuer 를 설치 합니다. 이때 도메인 주인의 email 을 입력 하도록 합니다.</p>
 </blockquote>
 
-<pre><code class="language-bash">EMAIL=&quot;me@nalbam.com&quot;
+<pre><code>EMAIL=&quot;me@nalbam.com&quot;
 
 cat &lt;&lt; EOF | kubectl apply -f -
 apiVersion: cert-manager.io/v1alpha2
@@ -1898,19 +1898,19 @@ EOF
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1572340181"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1572340181"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572340181"></script>
-    <script src="/workshop/js/jquery.sticky.js?1572340181"></script>
-    <script src="/workshop/js/featherlight.min.js?1572340181"></script>
-    <script src="/workshop/js/highlight.pack.js?1572340181"></script>
+    <script src="/workshop/js/clipboard.min.js?1572340580"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1572340580"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572340580"></script>
+    <script src="/workshop/js/jquery.sticky.js?1572340580"></script>
+    <script src="/workshop/js/featherlight.min.js?1572340580"></script>
+    <script src="/workshop/js/highlight.pack.js?1572340580"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572340181"></script>
-    <script src="/workshop/js/learn.js?1572340181"></script>
-    <script src="/workshop/js/hugo-learn.js?1572340181"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572340580"></script>
+    <script src="/workshop/js/learn.js?1572340580"></script>
+    <script src="/workshop/js/hugo-learn.js?1572340580"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1572340181" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1572340181"></script>
+    <link href="/workshop/mermaid/mermaid.css?1572340580" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1572340580"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

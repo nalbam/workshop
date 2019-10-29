@@ -5,13 +5,13 @@ weight: 31
 
 > Nmaespace 를 생성 합니다.
 
-```bash
+```
 kubectl create namespace monitor
 ```
 
 > prometheus 을 설치 합니다.
 
-```bash
+```
 cat << EOF | helm upgrade --install prometheus stable/prometheus --namespace monitor --values -
 server:
   persistentVolume:
@@ -33,7 +33,7 @@ EOF
 
 > 설치 내역을 확인 합니다.
 
-```bash
+```
 helm list
 helm history prometheus
 

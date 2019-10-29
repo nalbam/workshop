@@ -5,7 +5,7 @@ weight: 41
 
 > 환경 변수를 설정 합니다.
 
-```bash
+```
 PASSWORD="password"
 
 # ROOT_DOMAIN="mzdev.be"
@@ -18,13 +18,13 @@ INGRESS_DOMAIN="jenkins-devops.${BASE_DOMAIN}"
 
 > Nmaespace 를 생성 합니다.
 
-```bash
+```
 kubectl create namespace devops
 ```
 
 > jenkins 을 설치 합니다.
 
-```bash
+```
 cat << EOF | helm upgrade --install jenkins stable/jenkins --namespace devops --values -
 master:
   adminUser: admin
