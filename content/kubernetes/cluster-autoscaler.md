@@ -5,7 +5,7 @@ weight: 24
 
 > 환경 변수를 설정 합니다.
 
-```
+```bash
 REGION="ap-northeast-2"
 CLUSTER_NAME="$(kubectl config current-context)"
 
@@ -16,7 +16,7 @@ echo ${AWS_ROLE_ARN}
 
 > cluster-autoscaler 을 설치 합니다.
 
-```
+```bash
 cat << EOF | helm upgrade --install cluster-autoscaler stable/cluster-autoscaler --namespace kube-system --values -
 nameOverride: cluster-autoscaler
 
@@ -48,7 +48,7 @@ EOF
 
 > 설치 내역을 확인 합니다.
 
-```
+```bash
 helm list
 helm history cluster-autoscaler
 

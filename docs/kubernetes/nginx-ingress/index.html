@@ -13,20 +13,20 @@
     <title>nginx-ingress :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1572321354" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1572318041" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1572321354" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1572318041"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1572321354"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1572318041"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1572318041"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1572321354"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1572321354"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1572318041"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1572321354"></script>
 
     
   </div>
@@ -1137,8 +1137,8 @@ echo ${ELB_DOMAIN}
 <p><strong>mzdev.be</strong> 라는 도메인이 있고, ELB 주소를 *<strong>.spot.mzdev.be</strong> 로 연결 하고자 할때 다음과 같은 방법으로 등록 할수 있습니다.</p>
 </blockquote>
 
-<pre><code>ROOT_DOMAIN=&quot;mzdev.be&quot;
-BASE_DOMAIN=&quot;*.spot.${ROOT_DOMAIN}&quot;
+<pre><code class="language-bash">ROOT_DOMAIN=&quot;mzdev.be&quot;
+BASE_DOMAIN=&quot;spot.${ROOT_DOMAIN}&quot;
 
 # HostedZoneId
 ZONE_ID=&quot;$(aws route53 list-hosted-zones | ROOT_DOMAIN=${ROOT_DOMAIN}. jq -r '.HostedZones[] | select(.Name==env.ROOT_DOMAIN) | .Id' | cut -d'/' -f3)&quot;
@@ -1152,7 +1152,7 @@ ELB_ZONE_ID=&quot;$(aws elb describe-load-balancers --load-balancer-name ${ELB_S
 echo ${ELB_ZONE_ID}
 </code></pre>
 
-<pre><code>RECORD=&quot;/tmp/route53_record.json&quot;
+<pre><code class="language-bash">RECORD=&quot;/tmp/route53_record.json&quot;
 
 cat &gt; ${RECORD} &lt;&lt; EOF
 {
@@ -1160,7 +1160,7 @@ cat &gt; ${RECORD} &lt;&lt; EOF
     {
       &quot;Action&quot;: &quot;UPSERT&quot;,
       &quot;ResourceRecordSet&quot;: {
-        &quot;Name&quot;: &quot;${BASE_DOMAIN}&quot;,
+        &quot;Name&quot;: &quot;*.${BASE_DOMAIN}&quot;,
         &quot;Type&quot;: &quot;A&quot;,
         &quot;AliasTarget&quot;: {
           &quot;HostedZoneId&quot;: &quot;${ELB_ZONE_ID}&quot;,
@@ -1915,19 +1915,19 @@ aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-bat
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1572318041"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1572318041"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572318041"></script>
-    <script src="/workshop/js/jquery.sticky.js?1572318041"></script>
-    <script src="/workshop/js/featherlight.min.js?1572318041"></script>
-    <script src="/workshop/js/highlight.pack.js?1572318041"></script>
+    <script src="/workshop/js/clipboard.min.js?1572321354"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1572321354"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572321354"></script>
+    <script src="/workshop/js/jquery.sticky.js?1572321354"></script>
+    <script src="/workshop/js/featherlight.min.js?1572321354"></script>
+    <script src="/workshop/js/highlight.pack.js?1572321354"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572318041"></script>
-    <script src="/workshop/js/learn.js?1572318041"></script>
-    <script src="/workshop/js/hugo-learn.js?1572318041"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572321354"></script>
+    <script src="/workshop/js/learn.js?1572321354"></script>
+    <script src="/workshop/js/hugo-learn.js?1572321354"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1572318041" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1572318041"></script>
+    <link href="/workshop/mermaid/mermaid.css?1572321354" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1572321354"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

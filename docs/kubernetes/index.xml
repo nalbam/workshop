@@ -110,7 +110,7 @@
       
       <guid>/workshop/kubernetes/grafana/</guid>
       <description>환경 변수를 설정 합니다.
- PASSWORD=&amp;quot;password&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;grafana-monitor.spot.mzdev.be&amp;quot;   grafana 을 설치 합니다.
+ PASSWORD=&amp;quot;password&amp;quot; # ROOT_DOMAIN=&amp;quot;mzdev.be&amp;quot; # BASE_DOMAIN=&amp;quot;spot.${ROOT_DOMAIN}&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;grafana-monitor.${BASE_DOMAIN}&amp;quot;   grafana 을 설치 합니다.
  cat &amp;lt;&amp;lt; EOF | helm upgrade --install grafana stable/grafana --namespace monitor --values - adminUser: admin adminPassword: ${PASSWORD} service: type: ${SERVICE_TYPE} ingress: enabled: ${INGRESS_ENABLED} annotations: kubernetes.io/ingress.class: nginx nginx.ingress.kubernetes.io/force-ssl-redirect: &amp;quot;true&amp;quot; cert-manager.io/cluster-issuer: &amp;quot;letsencrypt-prod&amp;quot; external-dns.alpha.kubernetes.io/hostname: &amp;quot;${INGRESS_DOMAIN}.&amp;quot; hosts: - ${INGRESS_DOMAIN} tls: - secretName: grafana-tls hosts: - ${INGRESS_DOMAIN} env: GF_SERVER_ROOT_URL: &amp;quot;https://${INGRESS_DOMAIN}&amp;quot; persistence: enabled: true accessModes: - ReadWriteOnce size: 5Gi storageClassName: &amp;quot;efs&amp;quot; EOF   설치 내역을 확인 합니다.</description>
     </item>
     
@@ -121,9 +121,9 @@
       
       <guid>/workshop/kubernetes/jenkins/</guid>
       <description>환경 변수를 설정 합니다.
- PASSWORD=&amp;quot;password&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;jenkins-devops.spot.mzdev.be&amp;quot;   Nmaespace 를 생성 합니다.
+ PASSWORD=&amp;quot;password&amp;quot; # ROOT_DOMAIN=&amp;quot;mzdev.be&amp;quot; # BASE_DOMAIN=&amp;quot;spot.${ROOT_DOMAIN}&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;jenkins-devops.${BASE_DOMAIN}&amp;quot;   Nmaespace 를 생성 합니다.
  kubectl create namespace devops   jenkins 을 설치 합니다.
- cat &amp;lt;&amp;lt; EOF | helm upgrade --install jenkins stable/jenkins --namespace devops --values - master: adminUser: admin adminPassword: ${PASSWORD} resources: requests: cpu: 1000m memory: 3Gi limits: cpu: 2000m memory: 4Gi hostNetworking: true javaOpts: &amp;quot;-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Seoul&amp;quot; serviceType: ${SERVICE_TYPE} ingress: enabled: ${INGRESS_ENABLED} annotations: kubernetes.io/ingress.class: nginx nginx.ingress.kubernetes.io/force-ssl-redirect: &amp;quot;true&amp;quot; cert-manager.</description>
+ cat &amp;lt;&amp;lt; EOF | helm upgrade --install jenkins stable/jenkins --namespace devops --values - master: adminUser: admin adminPassword: ${PASSWORD} resources: requests: cpu: 1000m memory: 3Gi limits: cpu: 2000m memory: 4Gi hostNetworking: true javaOpts: &amp;quot;-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Seoul&amp;quot; serviceType: ${SERVICE_TYPE} ingress: enabled: ${INGRESS_ENABLED} annotations: kubernetes.</description>
     </item>
     
     <item>
@@ -133,7 +133,7 @@
       
       <guid>/workshop/kubernetes/docker-registry/</guid>
       <description> 환경 변수를 설정 합니다.
- SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;docker-registry-devops.spot.mzdev.be&amp;quot;   docker-registry 을 설치 합니다.
+ # ROOT_DOMAIN=&amp;quot;mzdev.be&amp;quot; # BASE_DOMAIN=&amp;quot;spot.${ROOT_DOMAIN}&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;docker-registry-devops.${BASE_DOMAIN}&amp;quot;   docker-registry 을 설치 합니다.
  cat &amp;lt;&amp;lt; EOF | helm upgrade --install docker-registry stable/docker-registry --namespace devops --values - service: type: ${SERVICE_TYPE} ingress: enabled: ${INGRESS_ENABLED} annotations: kubernetes.io/ingress.class: nginx nginx.ingress.kubernetes.io/force-ssl-redirect: &amp;quot;true&amp;quot; nginx.ingress.kubernetes.io/proxy-body-size: 500m ingress.kubernetes.io/proxy-body-size: 500m cert-manager.io/cluster-issuer: &amp;quot;letsencrypt-prod&amp;quot; external-dns.alpha.kubernetes.io/hostname: &amp;quot;${INGRESS_DOMAIN}.&amp;quot; hosts: - ${INGRESS_DOMAIN} path: / tls: - secretName: docker-registry-tls hosts: - ${INGRESS_DOMAIN} persistence: enabled: true accessMode: ReadWriteOnce size: 20Gi storageClass: &amp;quot;efs&amp;quot; EOF  </description>
     </item>
     
@@ -144,7 +144,7 @@
       
       <guid>/workshop/kubernetes/chartmuseum/</guid>
       <description> 환경 변수를 설정 합니다.
- SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;chartmuseum-devops.spot.mzdev.be&amp;quot;   chartmuseum 을 설치 합니다.
+ # ROOT_DOMAIN=&amp;quot;mzdev.be&amp;quot; # BASE_DOMAIN=&amp;quot;spot.${ROOT_DOMAIN}&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;chartmuseum-devops.${BASE_DOMAIN}&amp;quot;   chartmuseum 을 설치 합니다.
  cat &amp;lt;&amp;lt; EOF | helm upgrade --install chartmuseum stable/chartmuseum --namespace devops --values - env: open: DISABLE_API: false service: type: ${SERVICE_TYPE} ingress: enabled: ${INGRESS_ENABLED} annotations: kubernetes.io/ingress.class: nginx nginx.ingress.kubernetes.io/force-ssl-redirect: &amp;quot;true&amp;quot; nginx.ingress.kubernetes.io/proxy-body-size: 500m ingress.kubernetes.io/proxy-body-size: 500m cert-manager.io/cluster-issuer: &amp;quot;letsencrypt-prod&amp;quot; external-dns.alpha.kubernetes.io/hostname: &amp;quot;${INGRESS_DOMAIN}.&amp;quot; hosts: - name: ${INGRESS_DOMAIN} path: / tls: true tlsSecret: chartmuseum-tls persistence: enabled: true accessMode: ReadWriteOnce size: 8Gi storageClass: &amp;quot;efs&amp;quot; EOF  </description>
     </item>
     
@@ -155,7 +155,7 @@
       
       <guid>/workshop/kubernetes/sonatype-nexus/</guid>
       <description>환경 변수를 설정 합니다.
- PASSWORD=&amp;quot;password&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;sonatype-nexus-devops.spot.mzdev.be&amp;quot;   sonatype-nexus 를 statefulset 으로 설치 합니다.
+ PASSWORD=&amp;quot;password&amp;quot; # ROOT_DOMAIN=&amp;quot;mzdev.be&amp;quot; # BASE_DOMAIN=&amp;quot;spot.${ROOT_DOMAIN}&amp;quot; SERVICE_TYPE=&amp;quot;ClusterIP&amp;quot; INGRESS_ENABLED=true INGRESS_DOMAIN=&amp;quot;sonatype-nexus-devops.${BASE_DOMAIN}&amp;quot;   sonatype-nexus 를 StatefulSet 으로 설치 합니다.
  cat &amp;lt;&amp;lt; EOF | helm upgrade --install sonatype-nexus stable/sonatype-nexus --namespace devops --values - statefulset: enabled: true nexus: service: type: ${SERVICE_TYPE} resources: requests: cpu: 1000m memory: 3Gi limits: cpu: 2000m memory: 4Gi livenessProbe: initialDelaySeconds: 100 periodSeconds: 30 failureThreshold: 12 path: / readinessProbe: initialDelaySeconds: 100 periodSeconds: 30 failureThreshold: 12 path: / nexusProxy: env: nexusHttpHost: ${INGRESS_DOMAIN} nexusBackup: nexusAdminPassword: ${PASSWORD} ingress: enabled: ${INGRESS_ENABLED} annotations: kubernetes.</description>
     </item>
     

@@ -5,17 +5,20 @@ weight: 45
 
 > 환경 변수를 설정 합니다.
 
-```
+```bash
 PASSWORD="password"
+
+# ROOT_DOMAIN="mzdev.be"
+# BASE_DOMAIN="spot.${ROOT_DOMAIN}"
 
 SERVICE_TYPE="ClusterIP"
 INGRESS_ENABLED=true
-INGRESS_DOMAIN="sonatype-nexus-devops.spot.mzdev.be"
+INGRESS_DOMAIN="sonatype-nexus-devops.${BASE_DOMAIN}"
 ```
 
-> sonatype-nexus 를 **statefulset** 으로 설치 합니다.
+> sonatype-nexus 를 **StatefulSet** 으로 설치 합니다.
 
-```
+```bash
 cat << EOF | helm upgrade --install sonatype-nexus stable/sonatype-nexus --namespace devops --values -
 statefulset:
   enabled: true

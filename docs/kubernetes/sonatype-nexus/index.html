@@ -13,20 +13,20 @@
     <title>sonatype-nexus :: Workshop</title>
 
     
-    <link href="/workshop/css/nucleus.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/fontawesome-all.min.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/hybrid.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/featherlight.min.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/perfect-scrollbar.min.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/auto-complete.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/atom-one-dark-reasonable.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/theme.css?1572318041" rel="stylesheet">
-    <link href="/workshop/css/hugo-theme.css?1572318041" rel="stylesheet">
+    <link href="/workshop/css/nucleus.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/fontawesome-all.min.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/hybrid.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/featherlight.min.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/perfect-scrollbar.min.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/auto-complete.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/atom-one-dark-reasonable.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/theme.css?1572321354" rel="stylesheet">
+    <link href="/workshop/css/hugo-theme.css?1572321354" rel="stylesheet">
     
-      <link href="/workshop/css/theme-blue.css?1572318041" rel="stylesheet">
+      <link href="/workshop/css/theme-blue.css?1572321354" rel="stylesheet">
     
 
-    <script src="/workshop/js/jquery-3.3.1.min.js?1572318041"></script>
+    <script src="/workshop/js/jquery-3.3.1.min.js?1572321354"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/workshop/js/lunr.min.js?1572318041"></script>
-<script type="text/javascript" src="/workshop/js/auto-complete.js?1572318041"></script>
+<script type="text/javascript" src="/workshop/js/lunr.min.js?1572321354"></script>
+<script type="text/javascript" src="/workshop/js/auto-complete.js?1572321354"></script>
 <script type="text/javascript">
     
         var baseurl = "\/workshop\/";
     
 </script>
-<script type="text/javascript" src="/workshop/js/search.js?1572318041"></script>
+<script type="text/javascript" src="/workshop/js/search.js?1572321354"></script>
 
     
   </div>
@@ -1095,18 +1095,21 @@
 <p>환경 변수를 설정 합니다.</p>
 </blockquote>
 
-<pre><code>PASSWORD=&quot;password&quot;
+<pre><code class="language-bash">PASSWORD=&quot;password&quot;
+
+# ROOT_DOMAIN=&quot;mzdev.be&quot;
+# BASE_DOMAIN=&quot;spot.${ROOT_DOMAIN}&quot;
 
 SERVICE_TYPE=&quot;ClusterIP&quot;
 INGRESS_ENABLED=true
-INGRESS_DOMAIN=&quot;sonatype-nexus-devops.spot.mzdev.be&quot;
+INGRESS_DOMAIN=&quot;sonatype-nexus-devops.${BASE_DOMAIN}&quot;
 </code></pre>
 
 <blockquote>
-<p>sonatype-nexus 를 <strong>statefulset</strong> 으로 설치 합니다.</p>
+<p>sonatype-nexus 를 <strong>StatefulSet</strong> 으로 설치 합니다.</p>
 </blockquote>
 
-<pre><code>cat &lt;&lt; EOF | helm upgrade --install sonatype-nexus stable/sonatype-nexus --namespace devops --values -
+<pre><code class="language-bash">cat &lt;&lt; EOF | helm upgrade --install sonatype-nexus stable/sonatype-nexus --namespace devops --values -
 statefulset:
   enabled: true
 
@@ -1898,19 +1901,19 @@ EOF
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/workshop/js/clipboard.min.js?1572318041"></script>
-    <script src="/workshop/js/perfect-scrollbar.min.js?1572318041"></script>
-    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572318041"></script>
-    <script src="/workshop/js/jquery.sticky.js?1572318041"></script>
-    <script src="/workshop/js/featherlight.min.js?1572318041"></script>
-    <script src="/workshop/js/highlight.pack.js?1572318041"></script>
+    <script src="/workshop/js/clipboard.min.js?1572321354"></script>
+    <script src="/workshop/js/perfect-scrollbar.min.js?1572321354"></script>
+    <script src="/workshop/js/perfect-scrollbar.jquery.min.js?1572321354"></script>
+    <script src="/workshop/js/jquery.sticky.js?1572321354"></script>
+    <script src="/workshop/js/featherlight.min.js?1572321354"></script>
+    <script src="/workshop/js/highlight.pack.js?1572321354"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572318041"></script>
-    <script src="/workshop/js/learn.js?1572318041"></script>
-    <script src="/workshop/js/hugo-learn.js?1572318041"></script>
+    <script src="/workshop/js/modernizr.custom-3.6.0.js?1572321354"></script>
+    <script src="/workshop/js/learn.js?1572321354"></script>
+    <script src="/workshop/js/hugo-learn.js?1572321354"></script>
 
-    <link href="/workshop/mermaid/mermaid.css?1572318041" rel="stylesheet" />
-    <script src="/workshop/mermaid/mermaid.js?1572318041"></script>
+    <link href="/workshop/mermaid/mermaid.css?1572321354" rel="stylesheet" />
+    <script src="/workshop/mermaid/mermaid.js?1572321354"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

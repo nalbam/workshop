@@ -43,9 +43,9 @@ echo ${ELB_DOMAIN}
 
 > **mzdev.be** 라는 도메인이 있고, ELB 주소를 ***.spot.mzdev.be** 로 연결 하고자 할때 다음과 같은 방법으로 등록 할수 있습니다.
 
-```
+```bash
 ROOT_DOMAIN="mzdev.be"
-BASE_DOMAIN="*.spot.${ROOT_DOMAIN}"
+BASE_DOMAIN="spot.${ROOT_DOMAIN}"
 
 # HostedZoneId
 ZONE_ID="$(aws route53 list-hosted-zones | ROOT_DOMAIN=${ROOT_DOMAIN}. jq -r '.HostedZones[] | select(.Name==env.ROOT_DOMAIN) | .Id' | cut -d'/' -f3)"
@@ -59,7 +59,7 @@ ELB_ZONE_ID="$(aws elb describe-load-balancers --load-balancer-name ${ELB_SUB_ID
 echo ${ELB_ZONE_ID}
 ```
 
-```
+```bash
 RECORD="/tmp/route53_record.json"
 
 cat > ${RECORD} << EOF
@@ -68,7 +68,7 @@ cat > ${RECORD} << EOF
     {
       "Action": "UPSERT",
       "ResourceRecordSet": {
-        "Name": "${BASE_DOMAIN}",
+        "Name": "*.${BASE_DOMAIN}",
         "Type": "A",
         "AliasTarget": {
           "HostedZoneId": "${ELB_ZONE_ID}",

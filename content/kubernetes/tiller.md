@@ -5,7 +5,7 @@ weight: 10
 
 > ServiceAccount 와 ClusterRoleBinding 을 생성 합니다.
 
-```
+```bash
 cat << EOF | kubectl apply -n kube-system -f -
 apiVersion: v1
 kind: ServiceAccount
@@ -30,6 +30,6 @@ EOF
 
 > helm 을 설치 합니다.
 
-```
+```bash
 helm init --upgrade --service-account=tiller
 ```

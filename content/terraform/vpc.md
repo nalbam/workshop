@@ -19,13 +19,13 @@ terraform apply
 
 > 다음과 같은 메세지가 출력 되면 성공 입니다.
 
-```
+```bash
 Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
 Outputs:
 
 nat_ip = [
-  "52.78.138.128",
+  "52.78.13.15",
 ]
 private_subnet_cidr = [
   "10.15.4.0/24",
@@ -33,9 +33,9 @@ private_subnet_cidr = [
   "10.15.6.0/24",
 ]
 private_subnet_ids = [
-  "subnet-034abbc6fc10634ad",
-  "subnet-0944761ec8c2f8f93",
-  "subnet-06b7d51d445379626",
+  "subnet-034abbc6xc10634ad",
+  "subnet-0944x61ec8c2f8f93",
+  "subnet-06b7d51d44537x626",
 ]
 public_subnet_cidr = [
   "10.15.1.0/24",
@@ -43,9 +43,9 @@ public_subnet_cidr = [
   "10.15.3.0/24",
 ]
 public_subnet_ids = [
-  "subnet-092938d936610cbfe",
-  "subnet-026b23acc4b257e42",
-  "subnet-0bfe713b44d028898",
+  "subnet-092938d936610xbfe",
+  "subnet-026b23axc4b257e42",
+  "subnet-0xfe713b44d028898",
 ]
-vpc_id = vpc-0f2b2037a6dc5b059
+vpc_id = vpc-0fxb2037axdc5b059
 ```
