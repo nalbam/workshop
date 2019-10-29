@@ -38,7 +38,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/workshop/basics/terraform/</guid>
-      <description></description>
+      <description> Terraform  서비스 환경을 구축하는 프로비저닝 도구 Infrstructure as Code  </description>
     </item>
     
     <item>
@@ -47,7 +47,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/workshop/basics/kubernetes/</guid>
-      <description></description>
+      <description> Kubernetes  컨테이너 작업을 자동화하는 오픈소스 플랫폼 Container Orchestration Cluster 는 Master 와 Nodes 로 구성  AWS EKS  Amazon Elastic Container Service for Kubernetes AWS 의 Kubernetes 관리형 서비스  </description>
     </item>
     
     <item>
@@ -56,7 +56,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/workshop/basics/helm/</guid>
-      <description></description>
+      <description> Helm </description>
     </item>
     
   </channel>
