@@ -13,7 +13,6 @@ PASSWORD="password"
 
 SERVICE_TYPE="ClusterIP"
 INGRESS_ENABLED=true
-
 INGRESS_DOMAIN="grafana-monitor.${BASE_DOMAIN}"
 ```
 
