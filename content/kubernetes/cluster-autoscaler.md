@@ -8,6 +8,9 @@ weight: 24
 ```
 REGION="ap-northeast-2"
 CLUSTER_NAME="workshop-eks"
+
+ACCOUNT=$(aws sts get-caller-identity | grep "Account" | cut -d'"' -f4)
+AWS_ROLE_ARN="arn:aws:iam::${ACCOUNT}:role/${CLUSTER_NAME}-autoscaling"
 ```
 
 > cluster-autoscaler 을 설치 합니다.
@@ -19,6 +22,9 @@ awsRegion: ${REGION}
 autoDiscovery:
   enabled: true
   clusterName: ${CLUSTER_NAME}
+
+podAnnotations:
+  iam.amazonaws.com/role: ${AWS_ROLE_ARN}
 
 extraArgs:
   v: 4
