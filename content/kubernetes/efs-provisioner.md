@@ -14,7 +14,6 @@ CLUSTER_NAME="$(kubectl config current-context)"
 
 ```
 EFS_ID="$(aws efs describe-file-systems --creation-token ${CLUSTER_NAME} --region ${REGION} | jq -r '.FileSystems[].FileSystemId')"
-echo ${EFS_ID}
 ```
 
 > efs-provisioner 을 설치 합니다.

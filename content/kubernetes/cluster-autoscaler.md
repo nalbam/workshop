@@ -11,7 +11,6 @@ CLUSTER_NAME="$(kubectl config current-context)"
 
 ACCOUNT="$(aws sts get-caller-identity | grep "Account" | cut -d'"' -f4)"
 AWS_ROLE_ARN="arn:aws:iam::${ACCOUNT}:role/${CLUSTER_NAME}-autoscaling"
-echo ${AWS_ROLE_ARN}
 ```
 
 > cluster-autoscaler 을 설치 합니다.

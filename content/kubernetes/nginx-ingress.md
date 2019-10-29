@@ -36,7 +36,6 @@ kubectl get pod,svc -n kube-ingress
 
 ```
 ELB_DOMAIN="$(kubectl get svc -n kube-ingress | grep LoadBalancer | grep nginx-ingress-controller | awk '{print $4}')"
-echo ${ELB_DOMAIN}
 ```
 
 > ELB 주소를 Route53 에서 원하는 도메인의 CNAME 으로 등록 합니다.
@@ -49,14 +48,11 @@ BASE_DOMAIN="spot.${ROOT_DOMAIN}"
 
 # HostedZoneId
 ZONE_ID="$(aws route53 list-hosted-zones | ROOT_DOMAIN=${ROOT_DOMAIN}. jq -r '.HostedZones[] | select(.Name==env.ROOT_DOMAIN) | .Id' | cut -d'/' -f3)"
-echo ${HostedZoneId}
 
 # CanonicalHostedZoneNameID
 ELB_SUB_ID="$(echo ${ELB_DOMAIN} | cut -d'-' -f1)"
-echo ${ELB_SUB}
 
 ELB_ZONE_ID="$(aws elb describe-load-balancers --load-balancer-name ${ELB_SUB_ID} | jq -r '.LoadBalancerDescriptions[] | .CanonicalHostedZoneNameID')"
-echo ${ELB_ZONE_ID}
 ```
 
 ```

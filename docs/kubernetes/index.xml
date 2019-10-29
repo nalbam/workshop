@@ -31,7 +31,7 @@
  kubectl create namespace kube-ingress   nginx-ingress 를 DaemonSet 으로 설치 합니다.
  cat &amp;lt;&amp;lt; EOF | helm upgrade --install nginx-ingress stable/nginx-ingress --namespace kube-ingress --values - controller: kind: DaemonSet config: use-forwarded-headers: &amp;quot;true&amp;quot; service: annotations: service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: &amp;quot;3600&amp;quot; EOF   설치 내역을 확인 합니다.
  helm list helm history nginx-ingress kubectl get pod,svc -n kube-ingress   ELB 주소를 확인 합니다.
- ELB_DOMAIN=&amp;quot;$(kubectl get svc -n kube-ingress | grep LoadBalancer | grep nginx-ingress-controller | awk &#39;{print $4}&#39;)&amp;quot; echo ${ELB_DOMAIN}   ELB 주소를 Route53 에서 원하는 도메인의 CNAME 으로 등록 합니다.</description>
+ ELB_DOMAIN=&amp;quot;$(kubectl get svc -n kube-ingress | grep LoadBalancer | grep nginx-ingress-controller | awk &#39;{print $4}&#39;)&amp;quot;   ELB 주소를 Route53 에서 원하는 도메인의 CNAME 으로 등록 합니다.</description>
     </item>
     
     <item>
@@ -75,8 +75,8 @@
       
       <guid>/workshop/kubernetes/cluster-autoscaler/</guid>
       <description>환경 변수를 설정 합니다.
- REGION=&amp;quot;ap-northeast-2&amp;quot; CLUSTER_NAME=&amp;quot;$(kubectl config current-context)&amp;quot; ACCOUNT=&amp;quot;$(aws sts get-caller-identity | grep &amp;quot;Account&amp;quot; | cut -d&#39;&amp;quot;&#39; -f4)&amp;quot; AWS_ROLE_ARN=&amp;quot;arn:aws:iam::${ACCOUNT}:role/${CLUSTER_NAME}-autoscaling&amp;quot; echo ${AWS_ROLE_ARN}   cluster-autoscaler 을 설치 합니다.
- cat &amp;lt;&amp;lt; EOF | helm upgrade --install cluster-autoscaler stable/cluster-autoscaler --namespace kube-system --values - nameOverride: cluster-autoscaler awsRegion: ${REGION} autoDiscovery: enabled: true clusterName: ${CLUSTER_NAME} podAnnotations: iam.amazonaws.com/role: ${AWS_ROLE_ARN} extraArgs: v: 4 stderrthreshold: info logtostderr: true expander: random scale-down-enabled: true skip-nodes-with-local-storage: false skip-nodes-with-system-pods: false sslCertPath: /etc/ssl/certs/ca-bundle.</description>
+ REGION=&amp;quot;ap-northeast-2&amp;quot; CLUSTER_NAME=&amp;quot;$(kubectl config current-context)&amp;quot; ACCOUNT=&amp;quot;$(aws sts get-caller-identity | grep &amp;quot;Account&amp;quot; | cut -d&#39;&amp;quot;&#39; -f4)&amp;quot; AWS_ROLE_ARN=&amp;quot;arn:aws:iam::${ACCOUNT}:role/${CLUSTER_NAME}-autoscaling&amp;quot;   cluster-autoscaler 을 설치 합니다.
+ cat &amp;lt;&amp;lt; EOF | helm upgrade --install cluster-autoscaler stable/cluster-autoscaler --namespace kube-system --values - nameOverride: cluster-autoscaler awsRegion: ${REGION} autoDiscovery: enabled: true clusterName: ${CLUSTER_NAME} podAnnotations: iam.amazonaws.com/role: ${AWS_ROLE_ARN} extraArgs: v: 4 stderrthreshold: info logtostderr: true expander: random scale-down-enabled: true skip-nodes-with-local-storage: false skip-nodes-with-system-pods: false sslCertPath: /etc/ssl/certs/ca-bundle.crt rbac: create: true pspEnabled: true EOF   설치 내역을 확인 합니다.</description>
     </item>
     
     <item>
@@ -87,7 +87,7 @@
       <guid>/workshop/kubernetes/efs-provisioner/</guid>
       <description> 환경 변수를 설정 합니다.
  REGION=&amp;quot;ap-northeast-2&amp;quot; CLUSTER_NAME=&amp;quot;$(kubectl config current-context)&amp;quot;   현재의 EKS cluster 용으로 미리 만들어 놓은 EFS 의 ID 를 조회 합니다.
- EFS_ID=&amp;quot;$(aws efs describe-file-systems --creation-token ${CLUSTER_NAME} --region ${REGION} | jq -r &#39;.FileSystems[].FileSystemId&#39;)&amp;quot; echo ${EFS_ID}   efs-provisioner 을 설치 합니다.
+ EFS_ID=&amp;quot;$(aws efs describe-file-systems --creation-token ${CLUSTER_NAME} --region ${REGION} | jq -r &#39;.FileSystems[].FileSystemId&#39;)&amp;quot;   efs-provisioner 을 설치 합니다.
  cat &amp;lt;&amp;lt; EOF | helm upgrade --install efs-provisioner stable/efs-provisioner --namespace kube-system --values - efsProvisioner: efsFileSystemId: ${EFS_ID} awsRegion: ${REGION} path: /shared provisionerName: ${CLUSTER_NAME}/efs storageClass: name: efs isDefault: false gidAllocate: enabled: true gidMin: 40000 gidMax: 50000 reclaimPolicy: Retain EOF  </description>
     </item>
     
