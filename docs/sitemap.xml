@@ -27,6 +27,10 @@
   </url>
   
   <url>
+    <loc>/workshop/basics/git/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/kubernetes/tiller/</loc>
   </url>
   
@@ -63,15 +67,15 @@
   </url>
   
   <url>
+    <loc>/workshop/basics/version/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/kubernetes/kube2iam/</loc>
   </url>
   
   <url>
     <loc>/workshop/requirements/lightsail/add_lightsail_01/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/basics/git/</loc>
   </url>
   
   <url>
@@ -91,10 +95,6 @@
   </url>
   
   <url>
-    <loc>/workshop/basics/version/</loc>
-  </url>
-  
-  <url>
     <loc>/workshop/requirements/lightsail/add_lightsail_04/</loc>
   </url>
   
@@ -107,18 +107,6 @@
   </url>
   
   <url>
-    <loc>/workshop/basics/terraform/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/basics/kubernetes/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/basics/helm/</loc>
-  </url>
-  
-  <url>
     <loc>/workshop/requirements/lightsail/tools/</loc>
   </url>
   
@@ -128,6 +116,10 @@
   
   <url>
     <loc>/workshop/requirements/lightsail/ssh_keygen/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/basics/terraform/</loc>
   </url>
   
   <url>
@@ -152,6 +144,10 @@
   
   <url>
     <loc>/workshop/terraform/eks/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/basics/kubernetes/</loc>
   </url>
   
   <url>

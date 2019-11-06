@@ -1,6 +1,6 @@
 ---
 title: Git
-weight: 22
+weight: 10
 ---
 
 ### 소개

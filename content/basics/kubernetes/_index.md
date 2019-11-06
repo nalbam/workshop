@@ -1,6 +1,6 @@
 ---
 title: Kubernetes
-weight: 26
+weight: 40
 ---
 
 ### Kubernetes

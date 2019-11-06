@@ -1,6 +1,6 @@
 ---
 title: Semantic Versioning
-weight: 24
+weight: 20
 ---
 
 ### 요약
