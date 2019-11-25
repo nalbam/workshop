@@ -32,7 +32,6 @@ ingress:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    external-dns.alpha.kubernetes.io/hostname: "${INGRESS_DOMAIN}."
   hosts:
     - ${INGRESS_DOMAIN}
   tls:
