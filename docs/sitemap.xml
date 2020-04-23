@@ -3,11 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/workshop/requirements/</loc>
+    <loc>/workshop/basics/</loc>
   </url>
   
   <url>
-    <loc>/workshop/basics/</loc>
+    <loc>/workshop/requirements/</loc>
   </url>
   
   <url>
@@ -35,7 +35,7 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_01/</loc>
+    <loc>/workshop/requirements/account/user-details/</loc>
   </url>
   
   <url>
@@ -43,11 +43,11 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_02/</loc>
+    <loc>/workshop/requirements/account/permissions/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_03/</loc>
+    <loc>/workshop/requirements/account/tags/</loc>
   </url>
   
   <url>
@@ -55,15 +55,19 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_04/</loc>
+    <loc>/workshop/requirements/account/review/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/add_user_05/</loc>
+    <loc>/workshop/requirements/account/success/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/</loc>
+    <loc>/workshop/requirements/cloud9/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/cloud9-home/</loc>
   </url>
   
   <url>
@@ -71,15 +75,15 @@
   </url>
   
   <url>
+    <loc>/workshop/requirements/cloud9/environment-name/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/kubernetes/kube2iam/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/add_lightsail_01/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/lightsail/add_lightsail_02/</loc>
+    <loc>/workshop/requirements/cloud9/configure-settings/</loc>
   </url>
   
   <url>
@@ -87,7 +91,7 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/add_lightsail_03/</loc>
+    <loc>/workshop/requirements/cloud9/review/</loc>
   </url>
   
   <url>
@@ -95,11 +99,7 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/add_lightsail_04/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/lightsail/console/</loc>
+    <loc>/workshop/requirements/cloud9/new-environment/</loc>
   </url>
   
   <url>
@@ -107,19 +107,23 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/tools/</loc>
+    <loc>/workshop/requirements/cloud9/environment-clear/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/aws_configure/</loc>
+    <loc>/workshop/requirements/cloud9/preferences/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/lightsail/ssh_keygen/</loc>
+    <loc>/workshop/requirements/cloud9/terminal/</loc>
   </url>
   
   <url>
     <loc>/workshop/basics/terraform/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/aws-configure/</loc>
   </url>
   
   <url>
@@ -136,6 +140,10 @@
   
   <url>
     <loc>/workshop/kubernetes/grafana/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/install-tools/</loc>
   </url>
   
   <url>
