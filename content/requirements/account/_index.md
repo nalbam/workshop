@@ -1,6 +1,6 @@
 ---
 title: AWS Account
-weight: 10
+weight: 31
 ---
 
 1. 관리자 권한이 있는 AWS 계정이 없다면 다음 링크를 눌러 새로운 계정을 만듭니다.

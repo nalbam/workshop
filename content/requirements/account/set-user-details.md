@@ -1,6 +1,6 @@
 ---
 title: Set user details
-weight: 11
+weight: 311
 ---
 
 `사용자 이름` 을 입력 합니다.

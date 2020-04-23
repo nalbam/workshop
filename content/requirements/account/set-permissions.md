@@ -1,6 +1,6 @@
 ---
 title: Set permissions
-weight: 12
+weight: 312
 ---
 
 `기존 정책 직접 연결` 탭을 선택 합니다.

@@ -1,6 +1,6 @@
 ---
 title: AWS Cloud9
-weight: 20
+weight: 32
 ---
 
 1. 공통 CLI 환경 구성을 위해, AWS Cloud9 인스턴스를 만듭니다.

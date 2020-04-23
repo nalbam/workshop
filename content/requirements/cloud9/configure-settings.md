@@ -1,6 +1,6 @@
 ---
 title: Configure settings
-weight: 22
+weight: 322
 ---
 
 설정을 그대로 사용 하겠습니다.

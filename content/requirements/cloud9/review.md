@@ -1,6 +1,6 @@
 ---
 title: Review
-weight: 23
+weight: 323
 ---
 
 설정 확인 후 `Create environment` 버튼을 누릅니다.

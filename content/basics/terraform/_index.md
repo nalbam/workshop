@@ -1,6 +1,6 @@
 ---
 title: Terraform
-weight: 30
+weight: 23
 ---
 
 ### Terraform

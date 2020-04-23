@@ -1,6 +1,6 @@
 ---
 title: Preferences
-weight: 26
+weight: 326
 ---
 
 `Preferences` 메뉴를 엽니다.

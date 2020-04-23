@@ -1,6 +1,6 @@
 ---
 title: Review
-weight: 14
+weight: 314
 ---
 
 입력한 정보를 다시한번 확인 합니다.

@@ -1,6 +1,6 @@
 ---
 title: Install tools
-weight: 32
+weight: 329
 ---
 
 워크샵에 필요한 툴을 설치 합니다.

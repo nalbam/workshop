@@ -1,6 +1,6 @@
 ---
 title: AWS configure
-weight: 31
+weight: 328
 ---
 
 AWS Account 를 생성하고 저장한 `Access key ID` 와 `Secret access key` 를 입력합니다.

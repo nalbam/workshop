@@ -1,6 +1,6 @@
 ---
 title: New environment
-weight: 24
+weight: 324
 ---
 
 잠시 후, 새 환경이 만들어졌습니다.

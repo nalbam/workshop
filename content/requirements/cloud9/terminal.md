@@ -1,6 +1,6 @@
 ---
 title: Terminal
-weight: 28
+weight: 327
 ---
 
 기본적인 작업 환경이 만들어졌습니다.

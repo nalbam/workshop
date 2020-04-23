@@ -23,19 +23,7 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/basics/git/</loc>
-  </url>
-  
-  <url>
     <loc>/workshop/kubernetes/tiller/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/account/user-details/</loc>
   </url>
   
   <url>
@@ -43,39 +31,11 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/permissions/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/account/tags/</loc>
-  </url>
-  
-  <url>
     <loc>/workshop/kubernetes/cert-manager/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/account/review/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/account/success/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/cloud9/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/cloud9/cloud9-home/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/basics/version/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/cloud9/environment-name/</loc>
+    <loc>/workshop/basics/git/</loc>
   </url>
   
   <url>
@@ -83,39 +43,11 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/cloud9/configure-settings/</loc>
-  </url>
-  
-  <url>
     <loc>/workshop/kubernetes/metrics-server/</loc>
   </url>
   
   <url>
-    <loc>/workshop/requirements/cloud9/review/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/kubernetes/cluster-autoscaler/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/cloud9/new-environment/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/kubernetes/efs-provisioner/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/cloud9/environment-clear/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/cloud9/preferences/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/requirements/cloud9/terminal/</loc>
+    <loc>/workshop/basics/version/</loc>
   </url>
   
   <url>
@@ -123,7 +55,19 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/cloud9/aws-configure/</loc>
+    <loc>/workshop/kubernetes/cluster-autoscaler/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/basics/kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/kubernetes/efs-provisioner/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/</loc>
   </url>
   
   <url>
@@ -135,6 +79,10 @@
   </url>
   
   <url>
+    <loc>/workshop/requirements/cloud9/</loc>
+  </url>
+  
+  <url>
     <loc>/workshop/terraform/git_clone/</loc>
   </url>
   
@@ -143,19 +91,11 @@
   </url>
   
   <url>
-    <loc>/workshop/requirements/cloud9/install-tools/</loc>
-  </url>
-  
-  <url>
     <loc>/workshop/terraform/vpc/</loc>
   </url>
   
   <url>
     <loc>/workshop/terraform/eks/</loc>
-  </url>
-  
-  <url>
-    <loc>/workshop/basics/kubernetes/</loc>
   </url>
   
   <url>
@@ -172,6 +112,66 @@
   
   <url>
     <loc>/workshop/kubernetes/sonatype-nexus/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/set-user-details/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/set-permissions/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/add-tags/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/review/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/account/success/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/cloud9-home/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/create-environment/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/configure-settings/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/review/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/new-environment/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/environment-clear/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/preferences/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/terminal/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/aws-configure/</loc>
+  </url>
+  
+  <url>
+    <loc>/workshop/requirements/cloud9/install-tools/</loc>
   </url>
   
   <url>
