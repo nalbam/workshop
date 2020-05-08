@@ -15,9 +15,6 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Bump Version
-        uses: opspresso/action-version@master
-
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
