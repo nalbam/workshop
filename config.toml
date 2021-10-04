@@ -16,6 +16,7 @@ defaultContentLanguageInSubdir= false
   showVisitedLinks = false
   disableBreadcrumb = false
   disableNextPrev = false
+  disableLandingPageButton = true
   themeVariant = "blue"
 
 [outputs]
