@@ -29,3 +29,6 @@ public/
 # JetBrains
 .idea/
 *.iml
+
+# hugo build
+docs/
